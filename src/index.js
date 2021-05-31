@@ -6,7 +6,7 @@ const sfdx = require('./utils/sfdx.js');
 
 try {
   
-  core.debug("=== index.js test ===");
+  core.debug("=== index.js ===");
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   core.debug(`The event payload: ${payload}`);
   

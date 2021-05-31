@@ -13182,7 +13182,7 @@ const sfdx = __webpack_require__(3645);
 
 try {
   
-  core.debug("=== index.js test ===");
+  core.debug("=== index.js ===");
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   core.debug(`The event payload: ${payload}`);
   
