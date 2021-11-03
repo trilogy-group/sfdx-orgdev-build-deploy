@@ -13786,8 +13786,6 @@ try {
   //Login to Org
   sfdx.login(cert,login);
 
-  console.info(operationType);
-  core.info(operationType);
   const operationType = core.getInput('operation_type');
   console.info(operationType);
   switch (operationType){
