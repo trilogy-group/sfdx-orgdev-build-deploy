@@ -63,6 +63,7 @@ module.exports.run = function(command, args, workingFolder = null, process = nul
         //outputMessage("Command executed: " + command, 'info', outputStdout);
         //outputMessage("With the following args: " + args.toString(), 'info', outputStdout);
         //outputMessage("Having the following return: " + spawn.stdout.toString(), 'stdout', outputStdout);
+        outputMessage(spawn.stdout.toString(),'stdout', outputStdout );
 
         switch (process) {
             case 'authInSandbox':
