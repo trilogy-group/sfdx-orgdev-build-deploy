@@ -31,7 +31,7 @@ try {
   sfdx.login(cert,login);
 
   const operationType = core.getInput('operation_type');
-
+  console.info(operationType);
   switch (operationType){
     case 'deploy':
       const deploy = {};
@@ -79,8 +79,9 @@ try {
       sfdx.retrieve(retrieveArgs);
       break;
     case 'dumpChanges':
-      retrieveArgs.sfdxRootFolder = core.getInput('sfdx_root_folder');
-      sfdx.dumpChanges(retrieveArgs);
+      const dumpChangesArgs = {};
+      dumpChangesArgs.sfdxRootFolder = core.getInput('sfdx_root_folder');
+      sfdx.dumpChanges(dumpChangesArgs);
       break;
     case 'create-sandbox': 
       const createArgs = {};
