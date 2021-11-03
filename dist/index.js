@@ -13472,8 +13472,8 @@ let dumpChanges = function(dumpChangesArgs){
     console.info("===dump changes===");
     var sfdxRootFolder = dumpChangesArgs.sfdxRootFolder;
     let query = "SELECT CreatedDate, CreatedBy.Name, ResponsibleNamespacePrefix, Action,CreatedById,DelegateUser,Display,Id,Section FROM SetupAuditTrail WHERE createdDate = YESTERDAY";
-    var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat' ,'csv' ,'>','..\\changes.csv'];
-    execCommand.run('sfdx', commandArgs, sfdxRootFolder);
+    var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat' ,'csv' ];
+    execCommand.run('sfdx', commandArgs, sfdxRootFolder, null, true );
 }
 
 let dataFactory = function (deploy){
