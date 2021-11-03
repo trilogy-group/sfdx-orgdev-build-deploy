@@ -21,7 +21,7 @@ const getErrorMessage = function(spawn) {
 
 const outputMessage = function(message, type, outputStdout) {
     let fileName = './output.txt';
-    let fileFlags = {flag: 'as'};
+    let fileFlags = {flag: 'w'};
 
     if (type == 'error') {
         core.error(message);
@@ -58,9 +58,11 @@ module.exports.run = function(command, args, workingFolder = null, process = nul
     }
 
     if (spawn.stdout) {
-        outputMessage("Command executed: " + command, 'info', outputStdout);
-        outputMessage("With the following args: " + args.toString(), 'info', outputStdout);
-        outputMessage("Having the following return: " + spawn.stdout.toString(), 'stdout', outputStdout);
+
+        //commented not needed in the output as the output needed to be stored is the returned data  LAMBDA-19114
+        //outputMessage("Command executed: " + command, 'info', outputStdout);
+        //outputMessage("With the following args: " + args.toString(), 'info', outputStdout);
+        //outputMessage("Having the following return: " + spawn.stdout.toString(), 'stdout', outputStdout);
 
         switch (process) {
             case 'authInSandbox':
