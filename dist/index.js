@@ -13794,7 +13794,6 @@ try {
   sfdx.login(cert,login);
 
   const operationType = core.getInput('operation_type');
-  console.info(operationType);
   switch (operationType){
     case 'deploy':
       const deploy = {};
