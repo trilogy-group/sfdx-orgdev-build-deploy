@@ -165,8 +165,9 @@ let retrieve = function (retrieveArgs){
 let dumpChanges = function(dumpChangesArgs){
     console.info("===dump changes===");
     var sfdxRootFolder = dumpChangesArgs.sfdxRootFolder;
-    const dt = new Date() - 1; //24 hour before
-    const dtString = dt.toISOString();
+    const oneDayOffset = (24*60*60*1000) * 1;
+    let dt = new Date() - oneDayOffset; //24 hour before
+    const dtString = new Date(dt).toISOString();
     let query = "SELECT CreatedDate, CreatedBy.Name, ResponsibleNamespacePrefix, Action,CreatedById,DelegateUser,Display,Id,Section FROM SetupAuditTrail WHERE action not in ('suOrgAdminLogout' , 'suOrgAdminLogin') and createdDate > " + dtString;
     core.info(query);
     var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat' ,'csv', '--targetusername', 'sfdc'];
