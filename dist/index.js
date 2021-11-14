@@ -13233,11 +13233,7 @@ module.exports.run = function(command, args, workingFolder = null, process = nul
     }
 
     if (spawn.stdout) {
-
-        //commented not needed in the output as the output needed to be stored is the returned data  LAMBDA-19114
-        //outputMessage("Command executed: " + command, 'info', outputStdout);
-        //outputMessage("With the following args: " + args.toString(), 'info', outputStdout);
-        //outputMessage("Having the following return: " + spawn.stdout.toString(), 'stdout', outputStdout);
+        
         outputMessage(spawn.stdout.toString(),'stdout', outputStdout );
 
         switch (process) {
@@ -13771,9 +13767,7 @@ try {
   core.debug("=== index.js ===");
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   core.debug(`The event payload: ${payload}`);
-
-  core.info("index.js");
-  core.info(payload);
+  
   //Variables declaration
   var cert = {};
   var login = {};

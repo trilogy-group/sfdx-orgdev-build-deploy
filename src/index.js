@@ -9,9 +9,7 @@ try {
   core.debug("=== index.js ===");
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   core.debug(`The event payload: ${payload}`);
-
-  core.info("index.js");
-  core.info(payload);
+  
   //Variables declaration
   var cert = {};
   var login = {};
