@@ -13205,7 +13205,7 @@ const outputMessage = function(message, type, outputStdout) {
             core.info(message);
         }
     }
-    message = message.toString().replaceAll('"', '\\"');
+    message = message.toString().replace(/"/g, '\\"');
     fs.writeFileSync(fileName,message,fileFlags);
 }
 
