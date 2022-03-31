@@ -4,6 +4,8 @@ const execCommand = require('./exec-command.js');
 const fs = require('fs');
 const xml2js = require('xml2js');
 
+const SFDX = 'sfdx-cli/bin/sfdx';
+
 let getApexTestClass = function(manifestpath, classesPath, defaultTestClass){
     core.info("=== getApexTestClass ===");
     var parser = new xml2js.Parser();
@@ -114,7 +116,7 @@ const convertPackage = function(packageFolder, manifestFile, sfdxRootFolder){
             } else {
                 ret = 3;
                 var argsDeploy = ['force:source:convert', '--rootdir', './', '--outputdir', packageFolder, '-x', manifestFile, '--json'];
-                execCommand.run('sfdx',argsDeploy, sfdxRootFolder);
+                execCommand.run(SFDX, argsDeploy, sfdxRootFolder);
         }
     });
     return ret;
@@ -128,7 +130,7 @@ let login = function (cert, login){
     core.info('==== Authenticating in the target org');
     const instanceurl = login.orgType === 'sandbox' ? 'https://test.salesforce.com' : 'https://login.salesforce.com';
     core.info('Instance URL: ' + instanceurl);
-    execCommand.run('sfdx', ['force:auth:jwt:grant', '--instanceurl', instanceurl, '--clientid', login.clientId, '--jwtkeyfile', 'server.key', '--username', login.username, '--setalias', 'sfdc']);
+    execCommand.run(SFDX, ['force:auth:jwt:grant', '--instanceurl', instanceurl, '--clientid', login.clientId, '--jwtkeyfile', 'server.key', '--username', login.username, '--setalias', 'sfdc']);
 };
 
 let deploy = function (deploy){
@@ -145,7 +147,7 @@ let deploy = function (deploy){
             argsDeploy.push('--ignorewarnings');
         }
         setTestArgs(deploy, argsDeploy, manifestFile);
-        execCommand.run('sfdx', argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout);
+        execCommand.run(SFDX, argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout);
     }
 };
 
@@ -159,7 +161,7 @@ let retrieve = function (retrieveArgs){
     core.info(`metadata: ${metadataTypes}`);
 
     var commandArgs = ['force:source:retrieve', '--wait', retrieveArgs.deployWaitTime, '--metadata', metadataTypes, '--targetusername', 'sfdc', '--json', '--loglevel', 'INFO'];
-    execCommand.run('sfdx', commandArgs, sfdxRootFolder);
+    execCommand.run(SFDX, commandArgs, sfdxRootFolder);
 };
 
 let dumpChanges = function(dumpChangesArgs){
@@ -171,14 +173,14 @@ let dumpChanges = function(dumpChangesArgs){
     let query = "SELECT CreatedDate, CreatedBy.Name, ResponsibleNamespacePrefix, Action,CreatedById,DelegateUser,Display,Id,Section FROM SetupAuditTrail WHERE action not in ('suOrgAdminLogout' , 'suOrgAdminLogin') and createdDate > " + dtString;
     core.info(query);
     var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat' ,'csv', '--targetusername', 'sfdc'];
-    execCommand.run('sfdx', commandArgs, sfdxRootFolder, null, true );
+    execCommand.run(SFDX, commandArgs, sfdxRootFolder, null, true );
 }
 
 let dataFactory = function (deploy){
     core.info("=== dataFactory ===");
     if (deploy.dataFactory  && !deploy.checkonly) {
         core.info('Executing data factory');
-        execCommand.run('sfdx', ['force:apex:execute', '-f', deploy.dataFactory, '-u', deploy.username]);
+        execCommand.run(SFDX, ['force:apex:execute', '-f', deploy.dataFactory, '-u', deploy.username]);
     }
 };
 
@@ -201,7 +203,7 @@ const authInSandbox = function (args){
     core.info("=== authInSandbox ===");
     const alias = 'sfdc.' + args.sandboxName.toLowerCase();
     const commandArgs = ['force:org:status', '-n', args.sandboxName, '-u', 'sfdc', '--json', '-w', '2', '--setalias', alias];
-	const execReturn = execCommand.run('sfdx', commandArgs, null,'authInSandbox');
+	const execReturn = execCommand.run(SFDX, commandArgs, null,'authInSandbox');
 
     if (args.deployInProd && execReturn != execCommand.returnTypes.LOGGED) {
         return undefined;
@@ -233,7 +235,7 @@ const createSandbox = function (args,alias = null){
     if (alias != null){
         commandArgs.push('--setalias', alias);
     }
-	execCommand.run('sfdx', commandArgs);
+	execCommand.run(SFDX, commandArgs);
 }
 
 const cloneSandbox = function (args,alias = null){
@@ -242,13 +244,13 @@ const cloneSandbox = function (args,alias = null){
     if (alias != null){
         commandArgs.push('--setalias', alias);
     }
-	execCommand.run('sfdx', commandArgs);
+	execCommand.run(SFDX, commandArgs);
 }
 
 const deleteSandbox = function (username){
 	core.info("=== deleteSandbox ===");
 	const commandArgs = ['force:org:delete', '-u', username, '--json','-p'];
-	const execReturn = execCommand.run('sfdx', commandArgs, null, 'deleteSandbox');
+	const execReturn = execCommand.run(SFDX, commandArgs, null, 'deleteSandbox');
     core.setOutput('errorDeletingSandbox',execReturn);
 }
 
@@ -259,7 +261,7 @@ const runTests = function(args) {
         commandArgs.push('-n');
         commandArgs.push(args.testsToRun);
     }
-	const execReturn = execCommand.run('sfdx', commandArgs, null, 'runTests', args.outputStdout);
+	const execReturn = execCommand.run(SFDX, commandArgs, null, 'runTests', args.outputStdout);
     core.setOutput('status',execReturn);
 }
 
