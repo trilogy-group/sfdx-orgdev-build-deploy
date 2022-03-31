@@ -13420,7 +13420,7 @@ const execCommand = __webpack_require__(5505);
 const fs = __webpack_require__(5747);
 const xml2js = __webpack_require__(6189);
 
-const SFDX = 'sfdx-cli/bin/sfdx';
+const SFDX = path.resolve('./sfdx-cli/bin/sfdx');
 
 let getApexTestClass = function(manifestpath, classesPath, defaultTestClass){
     core.info("=== getApexTestClass ===");

@@ -4,7 +4,7 @@ const execCommand = require('./exec-command.js');
 const fs = require('fs');
 const xml2js = require('xml2js');
 
-const SFDX = 'sfdx-cli/bin/sfdx';
+const SFDX = path.resolve('./sfdx-cli/bin/sfdx');
 
 let getApexTestClass = function(manifestpath, classesPath, defaultTestClass){
     core.info("=== getApexTestClass ===");
