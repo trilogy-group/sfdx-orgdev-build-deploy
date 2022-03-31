@@ -13278,7 +13278,7 @@ var fnInstallSFDX = function(){
     const installed = execCommand.run('sfdx',['version'],null,'sfdxIsInstalled');
     if (!installed) {
         core.info('=== Downloading and installing SFDX cli ===');
-        execCommand.run('npm install sfdx-cli --global', []);
+        execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
         core.info('=== SFDX cli installed ===');
     }
 };
