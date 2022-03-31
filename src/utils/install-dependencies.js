@@ -11,7 +11,7 @@ var fnInstallSFDX = function(){
         execCommand.run('wget', [SDFX_URL]);
         execCommand.run('mkdir', ['-p', 'sfdx-cli']);
         execCommand.run('tar', ['xJf', SDFX_FILENAME, '-C', 'sfdx-cli', '--strip-components', '1']);
-        execCommand.run('./sfdx-cli/install', []);
+        // execCommand.run('./sfdx-cli/install', []);
         core.info('=== SFDX cli installed ===');
     }
 };
