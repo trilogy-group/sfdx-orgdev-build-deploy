@@ -13304,7 +13304,7 @@ const execCommand = __nccwpck_require__(4050);
 const fs = __nccwpck_require__(7147);
 const xml2js = __nccwpck_require__(3012);
 
-const SFDX = path.resolve('./sfdx-cli/bin/sfdx');
+const SFDX = 'sfdx';
 
 let getApexTestClass = function(manifestpath, classesPath, defaultTestClass){
     core.info("=== getApexTestClass ===");
