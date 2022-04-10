@@ -6,7 +6,12 @@ const xml2js = require('xml2js');
 
 const SFDX = path.resolve('./sfdx-cli/bin/sfdx');
 
-let getApexTestClass = function (manifestpath, classesPath, defaultTestClass) {
+const getWorkerTestClasses = function (mappingPath, workerIndex) {
+  const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf-8'));
+  return mapping[workerIndex].join(',');
+};
+
+const getApexTestClasses = function (manifestpath, classesPath, defaultTestClass) {
   core.info('=== getApexTestClass ===');
   var parser = new xml2js.Parser();
   var typeTmp = null;
@@ -42,7 +47,7 @@ let getApexTestClass = function (manifestpath, classesPath, defaultTestClass) {
   return testClasses.join(',');
 };
 
-let getMetadataTypes = function (manifestsFiles, sfdxRootFolder) {
+const getMetadataTypes = function (manifestsFiles, sfdxRootFolder) {
   core.info('=== getManifestTypes ===');
   var parser = new xml2js.Parser();
   var type = null;
@@ -73,14 +78,22 @@ let getMetadataTypes = function (manifestsFiles, sfdxRootFolder) {
 
 const setTestArgs = function (deploy, argsDeploy, manifestFile) {
   if (deploy.testlevel == 'RunSpecifiedTests') {
-    let sfdxRootFolder = deploy.sfdxRootFolder;
-    const testClassesTmp = getApexTestClass(
-      sfdxRootFolder ? path.join(sfdxRootFolder, manifestFile) : manifestFile,
-      sfdxRootFolder
-        ? path.join(sfdxRootFolder, deploy.defaultSourcePath, 'classes')
-        : path.join(deploy.defaultSourcePath, 'classes'),
-      deploy.defaultTestClass
-    );
+    const sfdxRootFolder = deploy.sfdxRootFolder;
+    let testClassesTmp;
+    const workerIndex = parseInt(deploy.workerIndex);
+    if (workerIndex !== NaN) {
+      // tests are specified with worker mapping
+      core.info('worker Id : ' + workerIndex);
+      testClassesTmp = getWorkerTestClasses(path.join(sfdxRootFolder, 'mapped-tests.json'), workerIndex);
+    } else {
+      testClassesTmp = getApexTestClasses(
+        sfdxRootFolder ? path.join(sfdxRootFolder, manifestFile) : manifestFile,
+        sfdxRootFolder
+          ? path.join(sfdxRootFolder, deploy.defaultSourcePath, 'classes')
+          : path.join(deploy.defaultSourcePath, 'classes'),
+        deploy.defaultTestClass
+      );
+    }
 
     core.info('classes are : ' + testClassesTmp);
 

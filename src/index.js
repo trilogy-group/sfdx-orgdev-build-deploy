@@ -48,6 +48,7 @@ try {
       deploy.sandbox = false;
       deploy.packageFolder = core.getInput('package_folder');
       deploy.outputStdout = core.getInput('output_stdout') === 'false' ? false : true;
+      deploy.workerIndex = core.getInput('worker_index');
       sfdx.deployer(deploy);
 
       if (core.getInput('sandbox_name')) {
