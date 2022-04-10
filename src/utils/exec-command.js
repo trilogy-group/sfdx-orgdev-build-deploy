@@ -20,7 +20,10 @@ const getErrorMessage = function (spawn) {
 };
 
 const outputMessage = function (message, type, outputStdout) {
-  let fileName = './output.txt';
+  const workerIndex = core.getInput('worker_index');
+  const suffix = workerIndex ? `.${workerIndex}` : '';
+
+  let fileName = `./output${suffix}.txt`;
   let fileFlags = { flag: 'w' };
 
   if (type == 'error') {
