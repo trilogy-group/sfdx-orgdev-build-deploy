@@ -4,7 +4,7 @@ const execCommand = require('./exec-command.js');
 const fs = require('fs');
 const xml2js = require('xml2js');
 
-const SFDX = path.resolve('./sfdx-cli/bin/sfdx');
+const SFDX = 'sfdx';
 
 const getWorkerTestClasses = function (mappingPath, workerIndex) {
   const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf-8'));
