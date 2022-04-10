@@ -5,18 +5,17 @@ const dependencies = require('./utils/install-dependencies.js');
 const sfdx = require('./utils/sfdx.js');
 
 try {
-  
-  core.debug("=== index.js ===");
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
+  core.debug('=== index.js ===');
+  const payload = JSON.stringify(github.context.payload, undefined, 2);
   core.debug(`The event payload: ${payload}`);
-  
+
   //Variables declaration
   var cert = {};
   var login = {};
 
-  //Install dependecies  
+  //Install dependecies
   dependencies.install();
-  
+
   //Load cert params
   cert.certificatePath = core.getInput('certificate_path');
   cert.decryptionKey = core.getInput('decryption_key');
@@ -28,10 +27,10 @@ try {
   login.username = core.getInput('username');
 
   //Login to Org
-  sfdx.login(cert,login);
+  sfdx.login(cert, login);
 
   const operationType = core.getInput('operation_type');
-  switch (operationType){
+  switch (operationType) {
     case 'deploy':
       const deploy = {};
 
@@ -41,14 +40,14 @@ try {
       deploy.sfdxRootFolder = core.getInput('sfdx_root_folder');
       deploy.destructivePath = core.getInput('destructive_path');
       deploy.dataFactory = core.getInput('data_factory');
-      deploy.checkonly = (core.getInput('checkonly') === 'true' )? true : false;
-      deploy.ignoreWarnings = (core.getInput('ignore_warnings') === 'false' )? false : true;
+      deploy.checkonly = core.getInput('checkonly') === 'true' ? true : false;
+      deploy.ignoreWarnings = core.getInput('ignore_warnings') === 'false' ? false : true;
       deploy.testlevel = core.getInput('deploy_testlevel');
       deploy.deployWaitTime = core.getInput('deploy_wait_time') || '60'; // Default wait time is 60 minutes
       deploy.username = 'sfdc';
       deploy.sandbox = false;
       deploy.packageFolder = core.getInput('package_folder');
-      deploy.outputStdout = (core.getInput('output_stdout') === 'false' )? false : true;
+      deploy.outputStdout = core.getInput('output_stdout') === 'false' ? false : true;
       sfdx.deployer(deploy);
 
       if (core.getInput('sandbox_name')) {
@@ -61,7 +60,7 @@ try {
         deploy.username = sfdx.authInSandbox(sandboxArgs);
 
         //Deploy in sandbox or delete if it was deploy in prod
-        if (deploy.checkonly) { 
+        if (deploy.checkonly) {
           deploy.sandbox = true;
           sfdx.deployer(deploy);
         } else if (deploy.username != undefined) {
@@ -82,17 +81,17 @@ try {
       dumpChangesArgs.sfdxRootFolder = core.getInput('sfdx_root_folder');
       sfdx.dumpChanges(dumpChangesArgs);
       break;
-    case 'create-sandbox': 
+    case 'create-sandbox':
       const createArgs = {};
       createArgs.sandboxName = core.getInput('sandbox_name');
-      sfdx.createSandbox(createArgs); 
+      sfdx.createSandbox(createArgs);
       break;
     case 'run-tests':
       const testArgs = {};
       testArgs.deployWaitTime = core.getInput('deploy_wait_time') || '60';
       testArgs.username = 'sfdc';
       testArgs.testsToRun = core.getInput('tests_to_run') || null;
-      testArgs.outputStdout = (core.getInput('output_stdout') === 'false' )? false : true;
+      testArgs.outputStdout = core.getInput('output_stdout') === 'false' ? false : true;
       sfdx.runTests(testArgs);
       break;
     default:
