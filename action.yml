@@ -2,105 +2,109 @@ name: 'sfdx-orgdev-build-deploy'
 author: Tiago Nascimento - tnascimento@salesforce.com
 description: 'Convert a Salesforce DX project into a metadata package and deploy it'
 inputs:
-    type:
-        description: 'Type of deployment, could be one of the two: production or sandbox (default)'
-        required: true
-        default: 'sandbox'
+  type:
+    description: 'Type of deployment, could be one of the two: production or sandbox (default)'
+    required: true
+    default: 'sandbox'
 
-    certificate_path:
-        description: 'Path for the encrypted certificate to be used on force:auth:jwt:grant'
-        required: true
+  certificate_path:
+    description: 'Path for the encrypted certificate to be used on force:auth:jwt:grant'
+    required: true
 
-    decryption_key:
-        description: 'Decryption key to be used to decrypt the certificate'
-        required: true
-    
-    decryption_iv:
-        description: 'Decryption IV to be used to decrypt the certificate'
-        required: true
-    
-    client_id:  
-        description: 'Client ID / Consumer Key of a connected app to the target destination'
-        required: true
+  decryption_key:
+    description: 'Decryption key to be used to decrypt the certificate'
+    required: true
 
-    username:
-        description: 'Username to be used to connect in the target org'
-        required: true
+  decryption_iv:
+    description: 'Decryption IV to be used to decrypt the certificate'
+    required: true
 
-    checkonly:
-        description: 'Boolean (true/false) that will indicate whether the deploy is a checkonly deploy or not. If is a checkonly, on force:mdapi:deploy command the option -c will be appended'
-        required: true
-        default: true
+  client_id:
+    description: 'Client ID / Consumer Key of a connected app to the target destination'
+    required: true
 
-    sfdx_root_folder:
-        description: 'Path on the current repository to the root folder of the sfdx project'
-        required: false
+  username:
+    description: 'Username to be used to connect in the target org'
+    required: true
 
-    manifest_path:
-        description: 'Path on the current repository (or on the root folder of the sfdx project if sfdx_root_folder is set) to retrieve changes'
-        required: false
+  checkonly:
+    description: 'Boolean (true/false) that will indicate whether the deploy is a checkonly deploy or not. If is a checkonly, on force:mdapi:deploy command the option -c will be appended'
+    required: true
+    default: 'true'
 
-    deploy_testlevel:
-        description: 'Specifies which tests are run as part of a deployment. Valid values are: NoTestRun, RunSpecifiedTests, RunLocalTests, RunAllTestsInOrg'
-        required: true
-        default: RunLocalTests
+  sfdx_root_folder:
+    description: 'Path on the current repository to the root folder of the sfdx project'
+    required: false
 
-    deploy_wait_time:
-        description: 'Wait time for deployment to finish in minutes. Default is 60'
-        required: false
-        default: '60'
+  manifest_path:
+    description: 'Path on the current repository (or on the root folder of the sfdx project if sfdx_root_folder is set) to retrieve changes'
+    required: false
 
-    ignore_warnings:
-        description: 'pass --ignorewarnings option to sfdx command'
-        required: false
-        default: true
-        
-    destructive_path:
-        description: 'Path for the destructive changes directory'
-        required: false
-    
-    data_factory:
-        description: 'Path on the current repository to the apex script that will be used to create data required by the package'
-        required: false
+  deploy_testlevel:
+    description: 'Specifies which tests are run as part of a deployment. Valid values are: NoTestRun, RunSpecifiedTests, RunLocalTests, RunAllTestsInOrg'
+    required: true
+    default: RunLocalTests
 
-    default_source_path:
-        description: 'Default source path to look for apex classes. Only used when deploy_testlevel is RunSpecifiedTests'
-        required: false
-        default: 'force-app/main/default'
+  deploy_wait_time:
+    description: 'Wait time for deployment to finish in minutes. Default is 60'
+    required: false
+    default: '60'
 
-    operation_type:
-        description: 'Type of the operation. Deploy by default. Or retrieve. If retrieve - retrieves the sources from org according provided package.xml in manifest_path'
-        required: false
-        default: 'deploy'
+  ignore_warnings:
+    description: 'pass --ignorewarnings option to sfdx command'
+    required: false
+    default: 'true'
 
-    sandbox_name:
-        description: 'Name of the new sandbox to be created or cloned'
-        required: false
+  destructive_path:
+    description: 'Path for the destructive changes directory'
+    required: false
 
-    source_sandbox_name:
-        description: 'Name of the source sandbox to be cloned. Default: masterdev'
-        required: false
+  data_factory:
+    description: 'Path on the current repository to the apex script that will be used to create data required by the package'
+    required: false
 
-    sandbox_creation_type:
-        description: 'Accepted types: new or clone. Default is clone.'
-        required: false
+  default_source_path:
+    description: 'Default source path to look for apex classes. Only used when deploy_testlevel is RunSpecifiedTests'
+    required: false
+    default: 'force-app/main/default'
 
-    package_folder:
-        description: 'Path where manifest files to be deployed are. Mandatory if want to deploy new changes and destructive changes together'
-        required: false
+  operation_type:
+    description: 'Type of the operation. Deploy by default. Or retrieve. If retrieve - retrieves the sources from org according provided package.xml in manifest_path'
+    required: false
+    default: 'deploy'
 
-    output_stdout:
-        description: 'Boolean (true/false) that will indicate if deployment stdout should be printed to output. Default is true.'
-        required: false
+  sandbox_name:
+    description: 'Name of the new sandbox to be created or cloned'
+    required: false
 
-    tests_to_run:
-        description: 'Tests to run in RunTests action. If not specified it will run all tests.'
-        required: false
+  source_sandbox_name:
+    description: 'Name of the source sandbox to be cloned. Default: masterdev'
+    required: false
+
+  sandbox_creation_type:
+    description: 'Accepted types: new or clone. Default is clone.'
+    required: false
+
+  package_folder:
+    description: 'Path where manifest files to be deployed are. Mandatory if want to deploy new changes and destructive changes together'
+    required: false
+
+  output_stdout:
+    description: 'Boolean (true/false) that will indicate if deployment stdout should be printed to output. Default is true.'
+    required: false
+
+  tests_to_run:
+    description: 'Tests to run in RunTests action. If not specified it will run all tests.'
+    required: false
+
+  worker_index:
+    description: 'Turns on partial test execution, based on tests mapping. deploy_testlevel should be RunSpecifiedTests.'
+    required: false
 
 runs:
-    using: 'node12'
-    main: 'dist/index.js'
+  using: 'node12'
+  main: 'dist/index.js'
 
 branding:
-    icon: 'cloud-lightning'
-    color: 'blue'
+  icon: 'cloud-lightning'
+  color: 'blue'
