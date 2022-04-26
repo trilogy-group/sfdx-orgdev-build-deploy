@@ -1,8 +1,9 @@
+module.exports =
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 6828:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 7351:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -14,8 +15,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const os = __importStar(__nccwpck_require__(2037));
-const utils_1 = __nccwpck_require__(570);
+const os = __importStar(__webpack_require__(2087));
+const utils_1 = __webpack_require__(5278);
 /**
  * Commands
  *
@@ -87,8 +88,8 @@ function escapeProperty(s) {
 
 /***/ }),
 
-/***/ 4372:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 2186:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -109,11 +110,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const command_1 = __nccwpck_require__(6828);
-const file_command_1 = __nccwpck_require__(8288);
-const utils_1 = __nccwpck_require__(570);
-const os = __importStar(__nccwpck_require__(2037));
-const path = __importStar(__nccwpck_require__(1017));
+const command_1 = __webpack_require__(7351);
+const file_command_1 = __webpack_require__(717);
+const utils_1 = __webpack_require__(5278);
+const os = __importStar(__webpack_require__(2087));
+const path = __importStar(__webpack_require__(5622));
 /**
  * The code to exit an action
  */
@@ -332,8 +333,8 @@ exports.getState = getState;
 
 /***/ }),
 
-/***/ 8288:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 717:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -348,9 +349,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 // We use any as a valid input type
 /* eslint-disable @typescript-eslint/no-explicit-any */
-const fs = __importStar(__nccwpck_require__(7147));
-const os = __importStar(__nccwpck_require__(2037));
-const utils_1 = __nccwpck_require__(570);
+const fs = __importStar(__webpack_require__(5747));
+const os = __importStar(__webpack_require__(2087));
+const utils_1 = __webpack_require__(5278);
 function issueCommand(command, message) {
     const filePath = process.env[`GITHUB_${command}`];
     if (!filePath) {
@@ -368,7 +369,7 @@ exports.issueCommand = issueCommand;
 
 /***/ }),
 
-/***/ 570:
+/***/ 5278:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -394,15 +395,15 @@ exports.toCommandValue = toCommandValue;
 
 /***/ }),
 
-/***/ 4993:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 4087:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Context = void 0;
-const fs_1 = __nccwpck_require__(7147);
-const os_1 = __nccwpck_require__(2037);
+const fs_1 = __webpack_require__(5747);
+const os_1 = __webpack_require__(2087);
 class Context {
     /**
      * Hydrate the context from the environment
@@ -451,8 +452,8 @@ exports.Context = Context;
 
 /***/ }),
 
-/***/ 6078:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 5438:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -477,8 +478,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokit = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(4993));
-const utils_1 = __nccwpck_require__(9933);
+const Context = __importStar(__webpack_require__(4087));
+const utils_1 = __webpack_require__(3030);
 exports.context = new Context.Context();
 /**
  * Returns a hydrated octokit ready to use for GitHub Actions
@@ -494,8 +495,8 @@ exports.getOctokit = getOctokit;
 
 /***/ }),
 
-/***/ 5021:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 7914:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -520,7 +521,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getApiBaseUrl = exports.getProxyAgent = exports.getAuthString = void 0;
-const httpClient = __importStar(__nccwpck_require__(4310));
+const httpClient = __importStar(__webpack_require__(9925));
 function getAuthString(token, options) {
     if (!token && !options.auth) {
         throw new Error('Parameter token or opts.auth is required');
@@ -544,8 +545,8 @@ exports.getApiBaseUrl = getApiBaseUrl;
 
 /***/ }),
 
-/***/ 9933:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 3030:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
 
@@ -570,12 +571,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.getOctokitOptions = exports.GitHub = exports.context = void 0;
-const Context = __importStar(__nccwpck_require__(4993));
-const Utils = __importStar(__nccwpck_require__(5021));
+const Context = __importStar(__webpack_require__(4087));
+const Utils = __importStar(__webpack_require__(7914));
 // octokit + plugins
-const core_1 = __nccwpck_require__(7546);
-const plugin_rest_endpoint_methods_1 = __nccwpck_require__(4943);
-const plugin_paginate_rest_1 = __nccwpck_require__(493);
+const core_1 = __webpack_require__(6762);
+const plugin_rest_endpoint_methods_1 = __webpack_require__(3044);
+const plugin_paginate_rest_1 = __webpack_require__(4193);
 exports.context = new Context.Context();
 const baseUrl = Utils.getApiBaseUrl();
 const defaults = {
@@ -605,15 +606,15 @@ exports.getOctokitOptions = getOctokitOptions;
 
 /***/ }),
 
-/***/ 4310:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 9925:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const http = __nccwpck_require__(3685);
-const https = __nccwpck_require__(5687);
-const pm = __nccwpck_require__(8178);
+const http = __webpack_require__(8605);
+const https = __webpack_require__(7211);
+const pm = __webpack_require__(6443);
 let tunnel;
 var HttpCodes;
 (function (HttpCodes) {
@@ -1032,7 +1033,7 @@ class HttpClient {
         if (useProxy) {
             // If using proxy, need tunnel
             if (!tunnel) {
-                tunnel = __nccwpck_require__(976);
+                tunnel = __webpack_require__(4294);
             }
             const agentOptions = {
                 maxSockets: maxSockets,
@@ -1148,7 +1149,7 @@ exports.HttpClient = HttpClient;
 
 /***/ }),
 
-/***/ 8178:
+/***/ 6443:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1213,7 +1214,7 @@ exports.checkBypass = checkBypass;
 
 /***/ }),
 
-/***/ 6210:
+/***/ 334:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -1270,19 +1271,19 @@ exports.createTokenAuth = createTokenAuth;
 
 /***/ }),
 
-/***/ 7546:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 6762:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var universalUserAgent = __nccwpck_require__(2328);
-var beforeAfterHook = __nccwpck_require__(6300);
-var request = __nccwpck_require__(4562);
-var graphql = __nccwpck_require__(8689);
-var authToken = __nccwpck_require__(6210);
+var universalUserAgent = __webpack_require__(5030);
+var beforeAfterHook = __webpack_require__(3682);
+var request = __webpack_require__(6234);
+var graphql = __webpack_require__(8467);
+var authToken = __webpack_require__(334);
 
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -1452,16 +1453,16 @@ exports.Octokit = Octokit;
 
 /***/ }),
 
-/***/ 9109:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 9440:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var isPlainObject = __nccwpck_require__(7521);
-var universalUserAgent = __nccwpck_require__(2328);
+var isPlainObject = __webpack_require__(3287);
+var universalUserAgent = __webpack_require__(5030);
 
 function lowercaseKeys(object) {
   if (!object) {
@@ -1850,16 +1851,16 @@ exports.endpoint = endpoint;
 
 /***/ }),
 
-/***/ 8689:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 8467:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 
-var request = __nccwpck_require__(4562);
-var universalUserAgent = __nccwpck_require__(2328);
+var request = __webpack_require__(6234);
+var universalUserAgent = __webpack_require__(5030);
 
 const VERSION = "4.6.0";
 
@@ -1966,7 +1967,7 @@ exports.withCustomRequest = withCustomRequest;
 
 /***/ }),
 
-/***/ 493:
+/***/ 4193:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -2106,7 +2107,7 @@ exports.paginateRest = paginateRest;
 
 /***/ }),
 
-/***/ 4943:
+/***/ 3044:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3260,8 +3261,8 @@ exports.restEndpointMethods = restEndpointMethods;
 
 /***/ }),
 
-/***/ 6670:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 537:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -3270,8 +3271,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var deprecation = __nccwpck_require__(1126);
-var once = _interopDefault(__nccwpck_require__(9065));
+var deprecation = __webpack_require__(8932);
+var once = _interopDefault(__webpack_require__(1223));
 
 const logOnce = once(deprecation => console.warn(deprecation));
 /**
@@ -3323,8 +3324,8 @@ exports.RequestError = RequestError;
 
 /***/ }),
 
-/***/ 4562:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 6234:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -3333,11 +3334,11 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var endpoint = __nccwpck_require__(9109);
-var universalUserAgent = __nccwpck_require__(2328);
-var isPlainObject = __nccwpck_require__(7521);
-var nodeFetch = _interopDefault(__nccwpck_require__(4923));
-var requestError = __nccwpck_require__(6670);
+var endpoint = __webpack_require__(9440);
+var universalUserAgent = __webpack_require__(5030);
+var isPlainObject = __webpack_require__(3287);
+var nodeFetch = _interopDefault(__webpack_require__(467));
+var requestError = __webpack_require__(537);
 
 const VERSION = "5.4.14";
 
@@ -3479,12 +3480,12 @@ exports.request = request;
 
 /***/ }),
 
-/***/ 6300:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 3682:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var register = __nccwpck_require__(2054)
-var addHook = __nccwpck_require__(774)
-var removeHook = __nccwpck_require__(4343)
+var register = __webpack_require__(4670)
+var addHook = __webpack_require__(5549)
+var removeHook = __webpack_require__(6819)
 
 // bind with array of arguments: https://stackoverflow.com/a/21792913
 var bind = Function.bind
@@ -3543,7 +3544,7 @@ module.exports.Collection = Hook.Collection
 
 /***/ }),
 
-/***/ 774:
+/***/ 5549:
 /***/ ((module) => {
 
 module.exports = addHook;
@@ -3596,7 +3597,7 @@ function addHook(state, kind, name, hook) {
 
 /***/ }),
 
-/***/ 2054:
+/***/ 4670:
 /***/ ((module) => {
 
 module.exports = register;
@@ -3630,7 +3631,7 @@ function register(state, name, method, options) {
 
 /***/ }),
 
-/***/ 4343:
+/***/ 6819:
 /***/ ((module) => {
 
 module.exports = removeHook;
@@ -3656,7 +3657,7 @@ function removeHook(state, name, method) {
 
 /***/ }),
 
-/***/ 1126:
+/***/ 8932:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3684,7 +3685,7 @@ exports.Deprecation = Deprecation;
 
 /***/ }),
 
-/***/ 7521:
+/***/ 3287:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3730,8 +3731,8 @@ exports.isPlainObject = isPlainObject;
 
 /***/ }),
 
-/***/ 4923:
-/***/ ((module, exports, __nccwpck_require__) => {
+/***/ 467:
+/***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
 
@@ -3740,11 +3741,11 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Stream = _interopDefault(__nccwpck_require__(2781));
-var http = _interopDefault(__nccwpck_require__(3685));
-var Url = _interopDefault(__nccwpck_require__(7310));
-var https = _interopDefault(__nccwpck_require__(5687));
-var zlib = _interopDefault(__nccwpck_require__(9796));
+var Stream = _interopDefault(__webpack_require__(2413));
+var http = _interopDefault(__webpack_require__(8605));
+var Url = _interopDefault(__webpack_require__(8835));
+var https = _interopDefault(__webpack_require__(7211));
+var zlib = _interopDefault(__webpack_require__(8761));
 
 // Based on https://github.com/tmpvar/jsdom/blob/aa85b2abf07766ff7bf5c1f6daafb3726f2f2db5/lib/jsdom/living/blob.js
 
@@ -3895,7 +3896,7 @@ FetchError.prototype.name = 'FetchError';
 
 let convert;
 try {
-	convert = (__nccwpck_require__(6254).convert);
+	convert = __webpack_require__(2877).convert;
 } catch (e) {}
 
 const INTERNALS = Symbol('Body internals');
@@ -5378,7 +5379,7 @@ fetch.Promise = global.Promise;
 
 module.exports = exports = fetch;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports["default"] = exports;
+exports.default = exports;
 exports.Headers = Headers;
 exports.Request = Request;
 exports.Response = Response;
@@ -5387,10 +5388,10 @@ exports.FetchError = FetchError;
 
 /***/ }),
 
-/***/ 9065:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 1223:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var wrappy = __nccwpck_require__(7157)
+var wrappy = __webpack_require__(2940)
 module.exports = wrappy(once)
 module.exports.strict = wrappy(onceStrict)
 
@@ -5436,15 +5437,15 @@ function onceStrict (fn) {
 
 /***/ }),
 
-/***/ 4198:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 4700:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const optsArg = __nccwpck_require__(66)
-const pathArg = __nccwpck_require__(393)
+const optsArg = __webpack_require__(5944)
+const pathArg = __webpack_require__(7969)
 
-const {mkdirpNative, mkdirpNativeSync} = __nccwpck_require__(77)
-const {mkdirpManual, mkdirpManualSync} = __nccwpck_require__(5442)
-const {useNative, useNativeSync} = __nccwpck_require__(7041)
+const {mkdirpNative, mkdirpNativeSync} = __webpack_require__(9747)
+const {mkdirpManual, mkdirpManualSync} = __webpack_require__(3220)
+const {useNative, useNativeSync} = __webpack_require__(556)
 
 
 const mkdirp = (path, opts) => {
@@ -5474,10 +5475,10 @@ module.exports = mkdirp
 
 /***/ }),
 
-/***/ 9017:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 9101:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const {dirname} = __nccwpck_require__(1017)
+const {dirname} = __webpack_require__(5622)
 
 const findMade = (opts, parent, path = undefined) => {
   // we never want the 'made' return value to be a root directory
@@ -5510,10 +5511,10 @@ module.exports = {findMade, findMadeSync}
 
 /***/ }),
 
-/***/ 5442:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 3220:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const {dirname} = __nccwpck_require__(1017)
+const {dirname} = __webpack_require__(5622)
 
 const mkdirpManual = (path, opts, made) => {
   opts.recursive = false
@@ -5581,12 +5582,12 @@ module.exports = {mkdirpManual, mkdirpManualSync}
 
 /***/ }),
 
-/***/ 77:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 9747:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const {dirname} = __nccwpck_require__(1017)
-const {findMade, findMadeSync} = __nccwpck_require__(9017)
-const {mkdirpManual, mkdirpManualSync} = __nccwpck_require__(5442)
+const {dirname} = __webpack_require__(5622)
+const {findMade, findMadeSync} = __webpack_require__(9101)
+const {mkdirpManual, mkdirpManualSync} = __webpack_require__(3220)
 
 const mkdirpNative = (path, opts) => {
   opts.recursive = true
@@ -5627,11 +5628,11 @@ module.exports = {mkdirpNative, mkdirpNativeSync}
 
 /***/ }),
 
-/***/ 66:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 5944:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const { promisify } = __nccwpck_require__(3837)
-const fs = __nccwpck_require__(7147)
+const { promisify } = __webpack_require__(1669)
+const fs = __webpack_require__(5747)
 const optsArg = opts => {
   if (!opts)
     opts = { mode: 0o777, fs }
@@ -5657,11 +5658,11 @@ module.exports = optsArg
 
 /***/ }),
 
-/***/ 393:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 7969:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 const platform = process.env.__TESTING_MKDIRP_PLATFORM__ || process.platform
-const { resolve, parse } = __nccwpck_require__(1017)
+const { resolve, parse } = __webpack_require__(5622)
 const pathArg = path => {
   if (/\0/.test(path)) {
     // simulate same failure that node raises
@@ -5693,10 +5694,10 @@ module.exports = pathArg
 
 /***/ }),
 
-/***/ 7041:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 556:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const fs = __nccwpck_require__(7147)
+const fs = __webpack_require__(5747)
 
 const version = process.env.__TESTING_MKDIRP_NODE_VERSION__ || process.version
 const versArr = version.replace(/^v/, '').split('.')
@@ -5710,11 +5711,11 @@ module.exports = {useNative, useNativeSync}
 
 /***/ }),
 
-/***/ 7811:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 6764:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 
-const PropertiesReader = __nccwpck_require__(2288);
+const PropertiesReader = __webpack_require__(486);
 
 module.exports = function propertiesReaderFactory (sourceFile, encoding, options) {
 
@@ -5726,12 +5727,12 @@ module.exports = function propertiesReaderFactory (sourceFile, encoding, options
 
 /***/ }),
 
-/***/ 2288:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 486:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const {readFileSync, statSync} = __nccwpck_require__(7147);
-const propertyAppender = (__nccwpck_require__(3863).propertyAppender);
-const propertyWriter = (__nccwpck_require__(1257)/* .propertyWriter */ .L);
+const {readFileSync, statSync} = __webpack_require__(5747);
+const propertyAppender = __webpack_require__(703).propertyAppender;
+const propertyWriter = __webpack_require__(540)/* .propertyWriter */ .L;
 
 const has = Object.prototype.hasOwnProperty.call.bind(Object.prototype.hasOwnProperty);
 
@@ -6027,7 +6028,7 @@ PropertiesReader.prototype.getByRoot = function (root) {
  * @param {Boolean} [makePaths=false] When true will attempt to create the directory structure to any path property
  */
 PropertiesReader.prototype.bindToExpress = function (app, basePath, makePaths) {
-   var Path = __nccwpck_require__(1017);
+   var Path = __webpack_require__(5622);
 
    if (!/\/$/.test(basePath = basePath || process.cwd())) {
       basePath += '/';
@@ -6041,7 +6042,7 @@ PropertiesReader.prototype.bindToExpress = function (app, basePath, makePaths) {
          try {
             var directoryPath = /dir$/.test(key) ? value : Path.dirname(value);
             if (makePaths) {
-               (__nccwpck_require__(4198).sync)(directoryPath);
+               __webpack_require__(4700).sync(directoryPath);
             }
             else if (!statSync(directoryPath).isDirectory()) {
                throw new Error("Path is not a directory that already exists");
@@ -6086,7 +6087,7 @@ module.exports = PropertiesReader;
 
 /***/ }),
 
-/***/ 3863:
+/***/ 703:
 /***/ ((module) => {
 
 var defaultOptions = {
@@ -6182,10 +6183,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ 1257:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 540:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-const fs = __nccwpck_require__(7147);
+const fs = __webpack_require__(5747);
 
 const defaultOptions = {
    saveSections: true,
@@ -6249,8 +6250,8 @@ module.exports.L = function propertyWriter (userOptions) {
 
 /***/ }),
 
-/***/ 8075:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 2043:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 ;(function (sax) { // wrapper for non-node envs
   sax.parser = function (strict, opt) { return new SAXParser(strict, opt) }
@@ -6414,7 +6415,7 @@ module.exports.L = function propertyWriter (userOptions) {
 
   var Stream
   try {
-    Stream = (__nccwpck_require__(2781).Stream)
+    Stream = __webpack_require__(2413).Stream
   } catch (ex) {
     Stream = function () {}
   }
@@ -6484,7 +6485,7 @@ module.exports.L = function propertyWriter (userOptions) {
       typeof Buffer.isBuffer === 'function' &&
       Buffer.isBuffer(data)) {
       if (!this._decoder) {
-        var SD = (__nccwpck_require__(1576).StringDecoder)
+        var SD = __webpack_require__(4304).StringDecoder
         this._decoder = new SD('utf8')
       }
       data = this._decoder.write(data)
@@ -7821,27 +7822,27 @@ module.exports.L = function propertyWriter (userOptions) {
 
 /***/ }),
 
-/***/ 976:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
+/***/ 4294:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __nccwpck_require__(1838);
+module.exports = __webpack_require__(4219);
 
 
 /***/ }),
 
-/***/ 1838:
-/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+/***/ 4219:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 
-var net = __nccwpck_require__(1808);
-var tls = __nccwpck_require__(4404);
-var http = __nccwpck_require__(3685);
-var https = __nccwpck_require__(5687);
-var events = __nccwpck_require__(2361);
-var assert = __nccwpck_require__(9491);
-var util = __nccwpck_require__(3837);
+var net = __webpack_require__(1631);
+var tls = __webpack_require__(4016);
+var http = __webpack_require__(8605);
+var https = __webpack_require__(7211);
+var events = __webpack_require__(8614);
+var assert = __webpack_require__(2357);
+var util = __webpack_require__(1669);
 
 
 exports.httpOverHttp = httpOverHttp;
@@ -8101,7 +8102,7 @@ exports.debug = debug; // for test
 
 /***/ }),
 
-/***/ 2328:
+/***/ 5030:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -8127,7 +8128,7 @@ exports.getUserAgent = getUserAgent;
 
 /***/ }),
 
-/***/ 7157:
+/***/ 2940:
 /***/ ((module) => {
 
 // Returns a wrapper function that returns a wrapped callback
@@ -8167,7 +8168,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3060:
+/***/ 2624:
 /***/ (function(__unused_webpack_module, exports) {
 
 // Generated by CoffeeScript 1.12.7
@@ -8186,8 +8187,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4653:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 3337:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -8195,9 +8196,9 @@ function wrappy (fn, cb) {
   var builder, defaults, escapeCDATA, requiresCDATA, wrapCDATA,
     hasProp = {}.hasOwnProperty;
 
-  builder = __nccwpck_require__(5840);
+  builder = __webpack_require__(2958);
 
-  defaults = (__nccwpck_require__(181).defaults);
+  defaults = __webpack_require__(7251).defaults;
 
   requiresCDATA = function(entry) {
     return typeof entry === "string" && (entry.indexOf('&') >= 0 || entry.indexOf('>') >= 0 || entry.indexOf('<') >= 0);
@@ -8320,7 +8321,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 181:
+/***/ 7251:
 /***/ (function(__unused_webpack_module, exports) {
 
 // Generated by CoffeeScript 1.12.7
@@ -8399,8 +8400,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1948:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 3314:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -8410,17 +8411,17 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  sax = __nccwpck_require__(8075);
+  sax = __webpack_require__(2043);
 
-  events = __nccwpck_require__(2361);
+  events = __webpack_require__(8614);
 
-  bom = __nccwpck_require__(3060);
+  bom = __webpack_require__(2624);
 
-  processors = __nccwpck_require__(5905);
+  processors = __webpack_require__(9236);
 
-  setImmediate = (__nccwpck_require__(9512).setImmediate);
+  setImmediate = __webpack_require__(8213).setImmediate;
 
-  defaults = (__nccwpck_require__(181).defaults);
+  defaults = __webpack_require__(7251).defaults;
 
   isEmpty = function(thing) {
     return typeof thing === "object" && (thing != null) && Object.keys(thing).length === 0;
@@ -8787,7 +8788,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5905:
+/***/ 9236:
 /***/ (function(__unused_webpack_module, exports) {
 
 // Generated by CoffeeScript 1.12.7
@@ -8828,8 +8829,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3012:
-/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+/***/ 6189:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -8838,13 +8839,13 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  defaults = __nccwpck_require__(181);
+  defaults = __webpack_require__(7251);
 
-  builder = __nccwpck_require__(4653);
+  builder = __webpack_require__(3337);
 
-  parser = __nccwpck_require__(1948);
+  parser = __webpack_require__(3314);
 
-  processors = __nccwpck_require__(5905);
+  processors = __webpack_require__(9236);
 
   exports.defaults = defaults.defaults;
 
@@ -8874,7 +8875,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 9501:
+/***/ 2839:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -8893,7 +8894,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 7283:
+/***/ 9267:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -8923,7 +8924,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5745:
+/***/ 8229:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -9013,7 +9014,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1427:
+/***/ 9766:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -9030,16 +9031,16 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5531:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 8376:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var NodeType, XMLAttribute, XMLNode;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
   module.exports = XMLAttribute = (function() {
     function XMLAttribute(parent, name, value) {
@@ -9145,8 +9146,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 9800:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 333:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9154,9 +9155,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLCharacterData = __nccwpck_require__(7667);
+  XMLCharacterData = __webpack_require__(7709);
 
   module.exports = XMLCData = (function(superClass) {
     extend(XMLCData, superClass);
@@ -9188,8 +9189,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 7667:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 7709:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9197,7 +9198,7 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
   module.exports = XMLCharacterData = (function(superClass) {
     extend(XMLCharacterData, superClass);
@@ -9274,8 +9275,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4231:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 4407:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9283,9 +9284,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLCharacterData = __nccwpck_require__(7667);
+  XMLCharacterData = __webpack_require__(7709);
 
   module.exports = XMLComment = (function(superClass) {
     extend(XMLComment, superClass);
@@ -9317,16 +9318,16 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1649:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 7465:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var XMLDOMConfiguration, XMLDOMErrorHandler, XMLDOMStringList;
 
-  XMLDOMErrorHandler = __nccwpck_require__(1706);
+  XMLDOMErrorHandler = __webpack_require__(6744);
 
-  XMLDOMStringList = __nccwpck_require__(8911);
+  XMLDOMStringList = __webpack_require__(7028);
 
   module.exports = XMLDOMConfiguration = (function() {
     function XMLDOMConfiguration() {
@@ -9388,7 +9389,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1706:
+/***/ 6744:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -9411,7 +9412,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4331:
+/***/ 8310:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -9450,7 +9451,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 8911:
+/***/ 7028:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -9485,8 +9486,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5030:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 1015:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9494,9 +9495,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDTDAttList = (function(superClass) {
     extend(XMLDTDAttList, superClass);
@@ -9547,8 +9548,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 84:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 2421:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9556,9 +9557,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDTDElement = (function(superClass) {
     extend(XMLDTDElement, superClass);
@@ -9592,8 +9593,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 7695:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 53:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9601,11 +9602,11 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  isObject = (__nccwpck_require__(5745).isObject);
+  isObject = __webpack_require__(8229).isObject;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDTDEntity = (function(superClass) {
     extend(XMLDTDEntity, superClass);
@@ -9696,8 +9697,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1636:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 2837:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9705,9 +9706,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDTDNotation = (function(superClass) {
     extend(XMLDTDNotation, superClass);
@@ -9755,8 +9756,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 8270:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 6364:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9764,11 +9765,11 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  isObject = (__nccwpck_require__(5745).isObject);
+  isObject = __webpack_require__(8229).isObject;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDeclaration = (function(superClass) {
     extend(XMLDeclaration, superClass);
@@ -9805,8 +9806,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 2911:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 1801:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -9814,21 +9815,21 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  isObject = (__nccwpck_require__(5745).isObject);
+  isObject = __webpack_require__(8229).isObject;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLDTDAttList = __nccwpck_require__(5030);
+  XMLDTDAttList = __webpack_require__(1015);
 
-  XMLDTDEntity = __nccwpck_require__(7695);
+  XMLDTDEntity = __webpack_require__(53);
 
-  XMLDTDElement = __nccwpck_require__(84);
+  XMLDTDElement = __webpack_require__(2421);
 
-  XMLDTDNotation = __nccwpck_require__(1636);
+  XMLDTDNotation = __webpack_require__(2837);
 
-  XMLNamedNodeMap = __nccwpck_require__(7300);
+  XMLNamedNodeMap = __webpack_require__(4361);
 
   module.exports = XMLDocType = (function(superClass) {
     extend(XMLDocType, superClass);
@@ -9998,8 +9999,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3656:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 3730:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -10007,19 +10008,19 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  isPlainObject = (__nccwpck_require__(5745).isPlainObject);
+  isPlainObject = __webpack_require__(8229).isPlainObject;
 
-  XMLDOMImplementation = __nccwpck_require__(4331);
+  XMLDOMImplementation = __webpack_require__(8310);
 
-  XMLDOMConfiguration = __nccwpck_require__(1649);
+  XMLDOMConfiguration = __webpack_require__(7465);
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLStringifier = __nccwpck_require__(4858);
+  XMLStringifier = __webpack_require__(8594);
 
-  XMLStringWriter = __nccwpck_require__(3336);
+  XMLStringWriter = __webpack_require__(5913);
 
   module.exports = XMLDocument = (function(superClass) {
     extend(XMLDocument, superClass);
@@ -10247,51 +10248,51 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 150:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 7356:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var NodeType, WriterState, XMLAttribute, XMLCData, XMLComment, XMLDTDAttList, XMLDTDElement, XMLDTDEntity, XMLDTDNotation, XMLDeclaration, XMLDocType, XMLDocument, XMLDocumentCB, XMLElement, XMLProcessingInstruction, XMLRaw, XMLStringWriter, XMLStringifier, XMLText, getValue, isFunction, isObject, isPlainObject, ref,
     hasProp = {}.hasOwnProperty;
 
-  ref = __nccwpck_require__(5745), isObject = ref.isObject, isFunction = ref.isFunction, isPlainObject = ref.isPlainObject, getValue = ref.getValue;
+  ref = __webpack_require__(8229), isObject = ref.isObject, isFunction = ref.isFunction, isPlainObject = ref.isPlainObject, getValue = ref.getValue;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLDocument = __nccwpck_require__(3656);
+  XMLDocument = __webpack_require__(3730);
 
-  XMLElement = __nccwpck_require__(5658);
+  XMLElement = __webpack_require__(9437);
 
-  XMLCData = __nccwpck_require__(9800);
+  XMLCData = __webpack_require__(333);
 
-  XMLComment = __nccwpck_require__(4231);
+  XMLComment = __webpack_require__(4407);
 
-  XMLRaw = __nccwpck_require__(9804);
+  XMLRaw = __webpack_require__(6329);
 
-  XMLText = __nccwpck_require__(6451);
+  XMLText = __webpack_require__(1318);
 
-  XMLProcessingInstruction = __nccwpck_require__(1224);
+  XMLProcessingInstruction = __webpack_require__(6939);
 
-  XMLDeclaration = __nccwpck_require__(8270);
+  XMLDeclaration = __webpack_require__(6364);
 
-  XMLDocType = __nccwpck_require__(2911);
+  XMLDocType = __webpack_require__(1801);
 
-  XMLDTDAttList = __nccwpck_require__(5030);
+  XMLDTDAttList = __webpack_require__(1015);
 
-  XMLDTDEntity = __nccwpck_require__(7695);
+  XMLDTDEntity = __webpack_require__(53);
 
-  XMLDTDElement = __nccwpck_require__(84);
+  XMLDTDElement = __webpack_require__(2421);
 
-  XMLDTDNotation = __nccwpck_require__(1636);
+  XMLDTDNotation = __webpack_require__(2837);
 
-  XMLAttribute = __nccwpck_require__(5531);
+  XMLAttribute = __webpack_require__(8376);
 
-  XMLStringifier = __nccwpck_require__(4858);
+  XMLStringifier = __webpack_require__(8594);
 
-  XMLStringWriter = __nccwpck_require__(3336);
+  XMLStringWriter = __webpack_require__(5913);
 
-  WriterState = __nccwpck_require__(1427);
+  WriterState = __webpack_require__(9766);
 
   module.exports = XMLDocumentCB = (function() {
     function XMLDocumentCB(options, onData, onEnd) {
@@ -10782,8 +10783,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 8819:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 3590:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -10791,9 +10792,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
   module.exports = XMLDummy = (function(superClass) {
     extend(XMLDummy, superClass);
@@ -10820,8 +10821,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5658:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 9437:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -10829,15 +10830,15 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  ref = __nccwpck_require__(5745), isObject = ref.isObject, isFunction = ref.isFunction, getValue = ref.getValue;
+  ref = __webpack_require__(8229), isObject = ref.isObject, isFunction = ref.isFunction, getValue = ref.getValue;
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLAttribute = __nccwpck_require__(5531);
+  XMLAttribute = __webpack_require__(8376);
 
-  XMLNamedNodeMap = __nccwpck_require__(7300);
+  XMLNamedNodeMap = __webpack_require__(4361);
 
   module.exports = XMLElement = (function(superClass) {
     extend(XMLElement, superClass);
@@ -11125,7 +11126,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 7300:
+/***/ 4361:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -11190,15 +11191,15 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 2919:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 7608:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var DocumentPosition, NodeType, XMLCData, XMLComment, XMLDeclaration, XMLDocType, XMLDummy, XMLElement, XMLNamedNodeMap, XMLNode, XMLNodeList, XMLProcessingInstruction, XMLRaw, XMLText, getValue, isEmpty, isFunction, isObject, ref1,
     hasProp = {}.hasOwnProperty;
 
-  ref1 = __nccwpck_require__(5745), isObject = ref1.isObject, isFunction = ref1.isFunction, isEmpty = ref1.isEmpty, getValue = ref1.getValue;
+  ref1 = __webpack_require__(8229), isObject = ref1.isObject, isFunction = ref1.isFunction, isEmpty = ref1.isEmpty, getValue = ref1.getValue;
 
   XMLElement = null;
 
@@ -11237,19 +11238,19 @@ function wrappy (fn, cb) {
       this.children = [];
       this.baseURI = null;
       if (!XMLElement) {
-        XMLElement = __nccwpck_require__(5658);
-        XMLCData = __nccwpck_require__(9800);
-        XMLComment = __nccwpck_require__(4231);
-        XMLDeclaration = __nccwpck_require__(8270);
-        XMLDocType = __nccwpck_require__(2911);
-        XMLRaw = __nccwpck_require__(9804);
-        XMLText = __nccwpck_require__(6451);
-        XMLProcessingInstruction = __nccwpck_require__(1224);
-        XMLDummy = __nccwpck_require__(8819);
-        NodeType = __nccwpck_require__(7283);
-        XMLNodeList = __nccwpck_require__(7778);
-        XMLNamedNodeMap = __nccwpck_require__(7300);
-        DocumentPosition = __nccwpck_require__(9501);
+        XMLElement = __webpack_require__(9437);
+        XMLCData = __webpack_require__(333);
+        XMLComment = __webpack_require__(4407);
+        XMLDeclaration = __webpack_require__(6364);
+        XMLDocType = __webpack_require__(1801);
+        XMLRaw = __webpack_require__(6329);
+        XMLText = __webpack_require__(1318);
+        XMLProcessingInstruction = __webpack_require__(6939);
+        XMLDummy = __webpack_require__(3590);
+        NodeType = __webpack_require__(9267);
+        XMLNodeList = __webpack_require__(6768);
+        XMLNamedNodeMap = __webpack_require__(4361);
+        DocumentPosition = __webpack_require__(2839);
       }
     }
 
@@ -11982,7 +11983,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 7778:
+/***/ 6768:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -12017,8 +12018,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 1224:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 6939:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -12026,9 +12027,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLCharacterData = __nccwpck_require__(7667);
+  XMLCharacterData = __webpack_require__(7709);
 
   module.exports = XMLProcessingInstruction = (function(superClass) {
     extend(XMLProcessingInstruction, superClass);
@@ -12073,8 +12074,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 9804:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 6329:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -12082,9 +12083,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLNode = __nccwpck_require__(2919);
+  XMLNode = __webpack_require__(7608);
 
   module.exports = XMLRaw = (function(superClass) {
     extend(XMLRaw, superClass);
@@ -12115,8 +12116,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3215:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 8601:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -12124,11 +12125,11 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLWriterBase = __nccwpck_require__(3035);
+  XMLWriterBase = __webpack_require__(6752);
 
-  WriterState = __nccwpck_require__(1427);
+  WriterState = __webpack_require__(9766);
 
   module.exports = XMLStreamWriter = (function(superClass) {
     extend(XMLStreamWriter, superClass);
@@ -12298,8 +12299,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3336:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 5913:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -12307,7 +12308,7 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  XMLWriterBase = __nccwpck_require__(3035);
+  XMLWriterBase = __webpack_require__(6752);
 
   module.exports = XMLStringWriter = (function(superClass) {
     extend(XMLStringWriter, superClass);
@@ -12340,7 +12341,7 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4858:
+/***/ 8594:
 /***/ (function(module) {
 
 // Generated by CoffeeScript 1.12.7
@@ -12587,8 +12588,8 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 6451:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 1318:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
@@ -12596,9 +12597,9 @@ function wrappy (fn, cb) {
     extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
     hasProp = {}.hasOwnProperty;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLCharacterData = __nccwpck_require__(7667);
+  XMLCharacterData = __webpack_require__(7709);
 
   module.exports = XMLText = (function(superClass) {
     extend(XMLText, superClass);
@@ -12663,45 +12664,45 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 3035:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 6752:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var NodeType, WriterState, XMLCData, XMLComment, XMLDTDAttList, XMLDTDElement, XMLDTDEntity, XMLDTDNotation, XMLDeclaration, XMLDocType, XMLDummy, XMLElement, XMLProcessingInstruction, XMLRaw, XMLText, XMLWriterBase, assign,
     hasProp = {}.hasOwnProperty;
 
-  assign = (__nccwpck_require__(5745).assign);
+  assign = __webpack_require__(8229).assign;
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  XMLDeclaration = __nccwpck_require__(8270);
+  XMLDeclaration = __webpack_require__(6364);
 
-  XMLDocType = __nccwpck_require__(2911);
+  XMLDocType = __webpack_require__(1801);
 
-  XMLCData = __nccwpck_require__(9800);
+  XMLCData = __webpack_require__(333);
 
-  XMLComment = __nccwpck_require__(4231);
+  XMLComment = __webpack_require__(4407);
 
-  XMLElement = __nccwpck_require__(5658);
+  XMLElement = __webpack_require__(9437);
 
-  XMLRaw = __nccwpck_require__(9804);
+  XMLRaw = __webpack_require__(6329);
 
-  XMLText = __nccwpck_require__(6451);
+  XMLText = __webpack_require__(1318);
 
-  XMLProcessingInstruction = __nccwpck_require__(1224);
+  XMLProcessingInstruction = __webpack_require__(6939);
 
-  XMLDummy = __nccwpck_require__(8819);
+  XMLDummy = __webpack_require__(3590);
 
-  XMLDTDAttList = __nccwpck_require__(5030);
+  XMLDTDAttList = __webpack_require__(1015);
 
-  XMLDTDElement = __nccwpck_require__(84);
+  XMLDTDElement = __webpack_require__(2421);
 
-  XMLDTDEntity = __nccwpck_require__(7695);
+  XMLDTDEntity = __webpack_require__(53);
 
-  XMLDTDNotation = __nccwpck_require__(1636);
+  XMLDTDNotation = __webpack_require__(2837);
 
-  WriterState = __nccwpck_require__(1427);
+  WriterState = __webpack_require__(9766);
 
   module.exports = XMLWriterBase = (function() {
     function XMLWriterBase(options) {
@@ -13098,28 +13099,28 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 5840:
-/***/ (function(module, __unused_webpack_exports, __nccwpck_require__) {
+/***/ 2958:
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 // Generated by CoffeeScript 1.12.7
 (function() {
   var NodeType, WriterState, XMLDOMImplementation, XMLDocument, XMLDocumentCB, XMLStreamWriter, XMLStringWriter, assign, isFunction, ref;
 
-  ref = __nccwpck_require__(5745), assign = ref.assign, isFunction = ref.isFunction;
+  ref = __webpack_require__(8229), assign = ref.assign, isFunction = ref.isFunction;
 
-  XMLDOMImplementation = __nccwpck_require__(4331);
+  XMLDOMImplementation = __webpack_require__(8310);
 
-  XMLDocument = __nccwpck_require__(3656);
+  XMLDocument = __webpack_require__(3730);
 
-  XMLDocumentCB = __nccwpck_require__(150);
+  XMLDocumentCB = __webpack_require__(7356);
 
-  XMLStringWriter = __nccwpck_require__(3336);
+  XMLStringWriter = __webpack_require__(5913);
 
-  XMLStreamWriter = __nccwpck_require__(3215);
+  XMLStreamWriter = __webpack_require__(8601);
 
-  NodeType = __nccwpck_require__(7283);
+  NodeType = __webpack_require__(9267);
 
-  WriterState = __nccwpck_require__(1427);
+  WriterState = __webpack_require__(9766);
 
   module.exports.create = function(name, xmldec, doctype, options) {
     var doc, root;
@@ -13170,608 +13171,27 @@ function wrappy (fn, cb) {
 
 /***/ }),
 
-/***/ 4050:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const core = __nccwpck_require__(4372)
-const { spawnSync } = __nccwpck_require__(2081);
-const fs = __nccwpck_require__(7147);
-
-const returnTypes = {
-    LOGGED: 'logged',
-    NOTFOUND: 'not found',
-    PROCESSING: 'processing'
-}
-
-const getErrorMessage = function(spawn) {
-    let errorMessage = '';
-    if (spawn.error !== undefined) {
-        errorMessage = spawn.error;
-    } 
-    if (spawn.stderr) {
-        errorMessage += " " + spawn.stderr.toString();
-    }
-    return errorMessage;
-}
-
-const outputMessage = function(message, type, outputStdout) {
-    let fileName = './output.txt';
-    let fileFlags = {flag: 'w'};
-
-    if (type == 'error') {
-        core.error(message);
-    } else {
-        if (type != 'stdout' || outputStdout){
-            core.info(message);
-        }
-    }
-    fs.writeFileSync(fileName,message,fileFlags);
-}
-
-module.exports.returnTypes = returnTypes;
-module.exports.run = function(command, args, workingFolder = null, process = null, outputStdout = true) {
-    var extraParams = {};
-    
-    //extraParams.shell = true;
-    //extraParams.env = process.env;
-    //extraParams.stdio = [process.stdin, process.stdout , process.stderr];
-    if (workingFolder) {
-        extraParams.cwd = workingFolder;
-    }
-    extraParams.encoding = 'utf-8';
-    extraParams.maxBuffer = 1024 * 1024 * 10
-
-    var spawn = spawnSync(command, args, extraParams);
-
-    if (process === 'sfdxIsInstalled') {
-        if (spawn.error && spawn.error.code === 'ENOENT') {
-            return false;
-        } else if (spawn.stdout) {
-            outputMessage(spawn.stdout);
-            return true;
-        }
-    }
-
-    if (spawn.stdout) {
-        
-        outputMessage(spawn.stdout.toString(),'stdout', outputStdout );
-
-        switch (process) {
-            case 'authInSandbox':
-                if (spawn.status == 0) {
-                    return returnTypes.LOGGED;
-                } else {
-                    const ret = JSON.parse(spawn.stdout);
-                    switch (ret.name) {
-                        case 'AuthInfoOverwriteError':
-                            return returnTypes.LOGGED;
-                        case 'SandboxProcessNotFoundBySandboxName':
-                            return returnTypes.NOTFOUND;
-                        case 'pollingTimeout':
-                            if (ret.message == 'Sandbox status is Processing; timed out waiting for completion.') {
-                                return returnTypes.PROCESSING;
-                            }
-                        default:
-                            return getErrorMessage(spawn);
-                    }
-                }
-                break;
-            case 'deleteSandbox':
-            case 'runTests':
-                return spawn.status;
-        }
-    }
-
-    if (spawn.error !== undefined || spawn.status !== 0) {
-        const errorMessage = getErrorMessage(spawn);
-        outputMessage(errorMessage, 'error', outputStdout);
-        throw Error(errorMessage);
-    }
-}
-
-/***/ }),
-
-/***/ 8679:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const core = __nccwpck_require__(4372)
-const execCommand = __nccwpck_require__(4050);
-
-var fnInstallSFDX = function(){
-    const installed = execCommand.run('sfdx',['version'],null,'sfdxIsInstalled');
-    if (!installed) {
-        core.info('=== Downloading and installing SFDX cli ===');
-        execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
-        core.info('=== SFDX cli installed ===');
-    }
-};
-
-module.exports.install = function(command, args) {
-    //Installs Salesforce DX CLI
-    fnInstallSFDX(); 
-
-};
-
-
-/***/ }),
-
-/***/ 4227:
-/***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
-
-const core = __nccwpck_require__(4372)
-const path = __nccwpck_require__(1017);
-const execCommand = __nccwpck_require__(4050);
-const fs = __nccwpck_require__(7147);
-const xml2js = __nccwpck_require__(3012);
-
-const SFDX = 'sfdx';
-
-let getApexTestClass = function(manifestpath, classesPath, defaultTestClass){
-    core.info("=== getApexTestClass ===");
-    var parser = new xml2js.Parser();
-    var typeTmp = null;
-    var classes = null;
-    var classNameTmp = null;
-    var testClasses = [];
-    var xml = fs.readFileSync(manifestpath, "utf8");
-    var fileContentTmp = null;
-
-    parser.parseString(xml, function (err, result) {
-        for(var i in result.Package.types){
-            typeTmp = result.Package.types[i];
-            if("ApexClass" === typeTmp.name[0]){
-                classes = typeTmp.members;
-            }
-        }
-    });
-
-    if(classes){
-        for(var i = 0; i < classes.length; i++){
-            classNameTmp = classes[i];
-            fileContentTmp = fs.readFileSync(classesPath+"/"+classNameTmp+".cls", "utf8");
-            if(fileContentTmp.toLowerCase().includes("@istest")){
-                testClasses.push(classNameTmp);
-            }
-        }
-    }else{
-        if(defaultTestClass){
-            testClasses.push(defaultTestClass);
-        }
-        
-    }
-    
-    return testClasses.join(",");
-}
-
-let getMetadataTypes = function(manifestsFiles, sfdxRootFolder){
-    core.info("=== getManifestTypes ===");
-    var parser = new xml2js.Parser();
-    var type = null;
-    var metadataTypes = [];
-
-    for(var f = 0; f < manifestsFiles.length; f++){
-        var manifestFile = sfdxRootFolder ? path.join(sfdxRootFolder, manifestsFiles[f]) : manifestsFiles[f];
-
-        var xml = fs.readFileSync(manifestFile, "utf8");
-
-        parser.parseString(xml, function (err, result) {
-            for(var i in result.Package.types){
-                type = result.Package.types[i];
-                for(var j = 0; j < type.members.length; j++){
-                    let member = type.members[j];
-                    if (member == "*") {
-                        metadataTypes.push(type.name[0]);
-                    } else {
-                        metadataTypes.push(type.name[0] + ":" + member);
-                    }
-                }
-            }
-        });
-    }
-
-    return metadataTypes.join(",");
-}
-
-const setTestArgs = function (deploy, argsDeploy, manifestFile){
-    if(deploy.testlevel == "RunSpecifiedTests"){
-        let sfdxRootFolder = deploy.sfdxRootFolder;
-        const testClassesTmp = getApexTestClass(
-            sfdxRootFolder ? path.join(sfdxRootFolder, manifestFile) : manifestFile, 
-            sfdxRootFolder ? path.join(sfdxRootFolder, deploy.defaultSourcePath, 'classes') : path.join(deploy.defaultSourcePath, 'classes'),
-            deploy.defaultTestClass);
-
-        core.info("classes are : "  + testClassesTmp);
-        
-        if(testClassesTmp){
-            argsDeploy.push("--testlevel");
-            argsDeploy.push(deploy.testlevel);
-
-            argsDeploy.push("--runtests");
-            argsDeploy.push(testClassesTmp);
-        }else{
-            argsDeploy.push("--testlevel");
-            argsDeploy.push("RunLocalTests");
-        }
-    }else{
-        argsDeploy.push("--testlevel");
-        argsDeploy.push(deploy.testlevel);
-    }
-}
-
-const convertPackage = function(packageFolder, manifestFile, sfdxRootFolder){
-    core.info("=== convert ===");
-
-    const parser = new xml2js.Parser({ attrkey: "attr" });
-
-    // you can read it asynchronously also
-    let xml_string = fs.readFileSync(sfdxRootFolder + '/' + manifestFile, "utf8");
-    let ret;
-    parser.parseString(xml_string, function(error, result) {
-            if (error !== null) {
-                ret = 1;
-                core.error('Error parsing xml package');
-                core.error(error);
-            } else if (result.Package.types == undefined){
-                ret = 2;
-            } else {
-                ret = 3;
-                var argsDeploy = ['force:source:convert', '--rootdir', './', '--outputdir', packageFolder, '-x', manifestFile, '--json'];
-                execCommand.run(SFDX, argsDeploy, sfdxRootFolder);
-        }
-    });
-    return ret;
-}
-
-let login = function (cert, login){
-    core.info("=== login ===");
-    core.debug('=== Decrypting certificate');
-    execCommand.run('openssl', ['enc', '-nosalt', '-aes-256-cbc', '-d', '-in', cert.certificatePath, '-out', 'server.key', '-base64', '-K', cert.decryptionKey, '-iv', cert.decryptionIV]);
-
-    core.info('==== Authenticating in the target org');
-    const instanceurl = login.orgType === 'sandbox' ? 'https://test.salesforce.com' : 'https://login.salesforce.com';
-    core.info('Instance URL: ' + instanceurl);
-    execCommand.run(SFDX, ['force:auth:jwt:grant', '--instanceurl', instanceurl, '--clientid', login.clientId, '--jwtkeyfile', 'server.key', '--username', login.username, '--setalias', 'sfdc']);
-};
-
-let deploy = function (deploy){
-    core.info("=== deploy ===");
-    let manifestFile = deploy.packageFolder + 'package.xml';
-    //if package is empty, deploy anyway as can have destructive changes
-    if (convertPackage(deploy.packageFolder, manifestFile, deploy.sfdxRootFolder) != 1){
-        var argsDeploy = ['force:mdapi:deploy', '--wait', deploy.deployWaitTime, '-d', deploy.packageFolder, '--targetusername', deploy.username, '--json'];
-        if(deploy.checkonly){
-            core.info("===== CHECK ONLY ====");
-            argsDeploy.push('--checkonly');
-        }
-        if(deploy.ignoreWarnings){
-            argsDeploy.push('--ignorewarnings');
-        }
-        setTestArgs(deploy, argsDeploy, manifestFile);
-        execCommand.run(SFDX, argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout);
-    }
-};
-
-let retrieve = function (retrieveArgs){
-    core.info("=== retrieve ===");
-
-    var manifestsFiles = retrieveArgs.manifestToRetrieve.split(",");
-    var sfdxRootFolder = retrieveArgs.sfdxRootFolder;
-    
-    var metadataTypes = getMetadataTypes(manifestsFiles, sfdxRootFolder);
-    core.info(`metadata: ${metadataTypes}`);
-
-    var commandArgs = ['force:source:retrieve', '--wait', retrieveArgs.deployWaitTime, '--metadata', metadataTypes, '--targetusername', 'sfdc', '--json', '--loglevel', 'INFO'];
-    execCommand.run(SFDX, commandArgs, sfdxRootFolder);
-};
-
-let dumpChanges = function(dumpChangesArgs){
-    console.info("===dump changes===");
-    var sfdxRootFolder = dumpChangesArgs.sfdxRootFolder;
-    const oneDayOffset = (24*60*60*1000) * 1;
-    let dt = new Date() - oneDayOffset; //24 hour before
-    const dtString = new Date(dt).toISOString();
-    let query = "SELECT CreatedDate, CreatedBy.Name, ResponsibleNamespacePrefix, Action,CreatedById,DelegateUser,Display,Id,Section FROM SetupAuditTrail WHERE action not in ('suOrgAdminLogout' , 'suOrgAdminLogin') and createdDate > " + dtString;
-    core.info(query);
-    var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat' ,'csv', '--targetusername', 'sfdc'];
-    execCommand.run(SFDX, commandArgs, sfdxRootFolder, null, true );
-}
-
-let dataFactory = function (deploy){
-    core.info("=== dataFactory ===");
-    if (deploy.dataFactory  && !deploy.checkonly) {
-        core.info('Executing data factory');
-        execCommand.run(SFDX, ['force:apex:execute', '-f', deploy.dataFactory, '-u', deploy.username]);
-    }
-};
-
-const deployer = function (args){
-    if (args.sandbox) {
-        args.checkonly = false;
-        args.testlevel = 'NoTestRun';
-    }
-
-    //Deploy/Checkonly to Org
-    deploy(args)
-    dataFactory(args);
-
-    if (!args.sandbox && !args.checkonly){
-        core.setOutput('deployInProd','1');
-    }
-}
-
-const authInSandbox = function (args){
-    core.info("=== authInSandbox ===");
-    const alias = 'sfdc.' + args.sandboxName.toLowerCase();
-    const commandArgs = ['force:org:status', '-n', args.sandboxName, '-u', 'sfdc', '--json', '-w', '2', '--setalias', alias];
-	const execReturn = execCommand.run(SFDX, commandArgs, null,'authInSandbox');
-
-    if (args.deployInProd && execReturn != execCommand.returnTypes.LOGGED) {
-        return undefined;
-    }
-
-    switch(execReturn) {
-        case execCommand.returnTypes.LOGGED:
-            return alias;
-        case execCommand.returnTypes.NOTFOUND:
-            if (args.sandboxCreationType == 'new') {
-                createSandbox(args,alias);
-            } else {
-                cloneSandbox(args,alias);
-            }
-            core.setOutput('sandboxCreated', '1');
-            return alias;
-        case execCommand.returnTypes.PROCESSING:
-            const errorMessage = "Sandbox is processing, can't deploy now into sandbox.";
-            core.error(errorMessage);
-            throw Error(errorMessage);
-        default:
-            throw Error(execReturn);
-    }
-}
-
-const createSandbox = function (args,alias = null){
-	core.info("=== createSandbox ===");
-	const commandArgs = ['force:org:create', '-t', 'sandbox', 'sandboxName='+args.sandboxName, 'licenseType=Developer', '-u', 'sfdc', '--json', '-w', '60'];
-    if (alias != null){
-        commandArgs.push('--setalias', alias);
-    }
-	execCommand.run(SFDX, commandArgs);
-}
-
-const cloneSandbox = function (args,alias = null){
-	core.info("=== cloneSandbox ===");
-	const commandArgs = ['force:org:clone', '-t', 'sandbox', 'sandboxName='+args.sandboxName, 'SourceSandboxName='+args.sourceSandboxName, '-u', 'sfdc', '--json', '-w', '60'];
-    if (alias != null){
-        commandArgs.push('--setalias', alias);
-    }
-	execCommand.run(SFDX, commandArgs);
-}
-
-const deleteSandbox = function (username){
-	core.info("=== deleteSandbox ===");
-	const commandArgs = ['force:org:delete', '-u', username, '--json','-p'];
-	const execReturn = execCommand.run(SFDX, commandArgs, null, 'deleteSandbox');
-    core.setOutput('errorDeletingSandbox',execReturn);
-}
-
-const runTests = function(args) {
-    core.info("=== runTests ===");
-    const commandArgs = ['force:apex:test:run', '-u', args.username, '-w',args.deployWaitTime,'-r','json','--verbose'];
-    if (args.testsToRun) {
-        commandArgs.push('-n');
-        commandArgs.push(args.testsToRun);
-    }
-	const execReturn = execCommand.run(SFDX, commandArgs, null, 'runTests', args.outputStdout);
-    core.setOutput('status',execReturn);
-}
-
-module.exports.login = login;
-module.exports.deployer = deployer;
-module.exports.retrieve = retrieve;
-module.exports.dumpChanges = dumpChanges;
-module.exports.authInSandbox = authInSandbox;
-module.exports.createSandbox = createSandbox;
-module.exports.deleteSandbox = deleteSandbox;
-module.exports.runTests = runTests;
-
-/***/ }),
-
-/***/ 6254:
-/***/ ((module) => {
-
-module.exports = eval("require")("encoding");
-
-
-/***/ }),
-
-/***/ 9491:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("assert");
-
-/***/ }),
-
-/***/ 2081:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("child_process");
-
-/***/ }),
-
-/***/ 2361:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("events");
-
-/***/ }),
-
-/***/ 7147:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("fs");
-
-/***/ }),
-
-/***/ 3685:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("http");
-
-/***/ }),
-
-/***/ 5687:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("https");
-
-/***/ }),
-
-/***/ 1808:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("net");
-
-/***/ }),
-
-/***/ 2037:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("os");
-
-/***/ }),
-
-/***/ 1017:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("path");
-
-/***/ }),
-
-/***/ 2781:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("stream");
-
-/***/ }),
-
-/***/ 1576:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("string_decoder");
-
-/***/ }),
-
-/***/ 9512:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("timers");
-
-/***/ }),
-
-/***/ 4404:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("tls");
-
-/***/ }),
-
-/***/ 7310:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("url");
-
-/***/ }),
-
-/***/ 3837:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("util");
-
-/***/ }),
-
-/***/ 9796:
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("zlib");
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __nccwpck_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 		}
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat */
-/******/ 	
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-const core = __nccwpck_require__(4372);
-const github = __nccwpck_require__(6078);
-var propertiesReader = __nccwpck_require__(7811);
-const dependencies = __nccwpck_require__(8679);
-const sfdx = __nccwpck_require__(4227);
+/***/ 4351:
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+const core = __webpack_require__(2186);
+const github = __webpack_require__(5438);
+var propertiesReader = __webpack_require__(6764);
+const dependencies = __webpack_require__(3912);
+const sfdx = __webpack_require__(2440);
 
 try {
-  
-  core.debug("=== index.js ===");
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
+  core.debug('=== index.js ===');
+  const payload = JSON.stringify(github.context.payload, undefined, 2);
   core.debug(`The event payload: ${payload}`);
-  
+
   //Variables declaration
   var cert = {};
   var login = {};
 
-  //Install dependecies  
+  //Install dependecies
   dependencies.install();
-  
+
   //Load cert params
   cert.certificatePath = core.getInput('certificate_path');
   cert.decryptionKey = core.getInput('decryption_key');
@@ -13783,10 +13203,10 @@ try {
   login.username = core.getInput('username');
 
   //Login to Org
-  sfdx.login(cert,login);
+  sfdx.login(cert, login);
 
   const operationType = core.getInput('operation_type');
-  switch (operationType){
+  switch (operationType) {
     case 'deploy':
       const deploy = {};
 
@@ -13796,14 +13216,15 @@ try {
       deploy.sfdxRootFolder = core.getInput('sfdx_root_folder');
       deploy.destructivePath = core.getInput('destructive_path');
       deploy.dataFactory = core.getInput('data_factory');
-      deploy.checkonly = (core.getInput('checkonly') === 'true' )? true : false;
-      deploy.ignoreWarnings = (core.getInput('ignore_warnings') === 'false' )? false : true;
+      deploy.checkonly = core.getInput('checkonly') === 'true' ? true : false;
+      deploy.ignoreWarnings = core.getInput('ignore_warnings') === 'false' ? false : true;
       deploy.testlevel = core.getInput('deploy_testlevel');
       deploy.deployWaitTime = core.getInput('deploy_wait_time') || '60'; // Default wait time is 60 minutes
       deploy.username = 'sfdc';
       deploy.sandbox = false;
       deploy.packageFolder = core.getInput('package_folder');
-      deploy.outputStdout = (core.getInput('output_stdout') === 'false' )? false : true;
+      deploy.outputStdout = core.getInput('output_stdout') === 'false' ? false : true;
+      deploy.workerIndex = core.getInput('worker_index');
       sfdx.deployer(deploy);
 
       if (core.getInput('sandbox_name')) {
@@ -13816,7 +13237,7 @@ try {
         deploy.username = sfdx.authInSandbox(sandboxArgs);
 
         //Deploy in sandbox or delete if it was deploy in prod
-        if (deploy.checkonly) { 
+        if (deploy.checkonly) {
           deploy.sandbox = true;
           sfdx.deployer(deploy);
         } else if (deploy.username != undefined) {
@@ -13837,17 +13258,17 @@ try {
       dumpChangesArgs.sfdxRootFolder = core.getInput('sfdx_root_folder');
       sfdx.dumpChanges(dumpChangesArgs);
       break;
-    case 'create-sandbox': 
+    case 'create-sandbox':
       const createArgs = {};
       createArgs.sandboxName = core.getInput('sandbox_name');
-      sfdx.createSandbox(createArgs); 
+      sfdx.createSandbox(createArgs);
       break;
     case 'run-tests':
       const testArgs = {};
       testArgs.deployWaitTime = core.getInput('deploy_wait_time') || '60';
       testArgs.username = 'sfdc';
       testArgs.testsToRun = core.getInput('tests_to_run') || null;
-      testArgs.outputStdout = (core.getInput('output_stdout') === 'false' )? false : true;
+      testArgs.outputStdout = core.getInput('output_stdout') === 'false' ? false : true;
       sfdx.runTests(testArgs);
       break;
     default:
@@ -13856,8 +13277,707 @@ try {
 } catch (error) {
   core.setFailed(error.message);
 }
-})();
 
-module.exports = __webpack_exports__;
+
+/***/ }),
+
+/***/ 5505:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const core = __webpack_require__(2186);
+const { spawnSync } = __webpack_require__(3129);
+const fs = __webpack_require__(5747);
+
+const returnTypes = {
+  LOGGED: 'logged',
+  NOTFOUND: 'not found',
+  PROCESSING: 'processing',
+};
+
+const getErrorMessage = function (spawn) {
+  let errorMessage = '';
+  if (spawn.error !== undefined) {
+    errorMessage = spawn.error;
+  }
+  if (spawn.stderr) {
+    errorMessage += ' ' + spawn.stderr.toString();
+  }
+  return errorMessage;
+};
+
+const outputMessage = function (message, type, outputStdout) {
+  const workerIndex = core.getInput('worker_index');
+  const suffix = workerIndex ? `.${workerIndex}` : '';
+
+  let fileName = `./output${suffix}.txt`;
+  let fileFlags = { flag: 'w' };
+
+  if (type == 'error') {
+    core.error(message);
+  } else {
+    if (type != 'stdout' || outputStdout) {
+      core.info(message);
+    }
+  }
+  fs.writeFileSync(fileName, message, fileFlags);
+};
+
+module.exports.returnTypes = returnTypes;
+module.exports.run = function (command, args, workingFolder = null, process = null, outputStdout = true) {
+  var extraParams = {};
+
+  //extraParams.shell = true;
+  //extraParams.env = process.env;
+  //extraParams.stdio = [process.stdin, process.stdout , process.stderr];
+  if (workingFolder) {
+    extraParams.cwd = workingFolder;
+  }
+  extraParams.encoding = 'utf-8';
+  extraParams.maxBuffer = 1024 * 1024 * 10;
+
+  var spawn = spawnSync(command, args, extraParams);
+
+  if (process === 'sfdxIsInstalled') {
+    if (spawn.error && spawn.error.code === 'ENOENT') {
+      return false;
+    } else if (spawn.stdout) {
+      outputMessage(spawn.stdout);
+      return true;
+    }
+  }
+
+  if (spawn.stdout) {
+    outputMessage(spawn.stdout.toString(), 'stdout', outputStdout);
+
+    switch (process) {
+      case 'authInSandbox':
+        if (spawn.status == 0) {
+          return returnTypes.LOGGED;
+        } else {
+          const ret = JSON.parse(spawn.stdout);
+          switch (ret.name) {
+            case 'AuthInfoOverwriteError':
+              return returnTypes.LOGGED;
+            case 'SandboxProcessNotFoundBySandboxName':
+              return returnTypes.NOTFOUND;
+            case 'pollingTimeout':
+              if (ret.message == 'Sandbox status is Processing; timed out waiting for completion.') {
+                return returnTypes.PROCESSING;
+              }
+            default:
+              return getErrorMessage(spawn);
+          }
+        }
+        break;
+      case 'deleteSandbox':
+      case 'runTests':
+        return spawn.status;
+    }
+  }
+
+  if (spawn.error !== undefined || spawn.status !== 0) {
+    const errorMessage = getErrorMessage(spawn);
+    outputMessage(errorMessage, 'error', outputStdout);
+    throw Error(errorMessage);
+  }
+};
+
+
+/***/ }),
+
+/***/ 3912:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const core = __webpack_require__(2186);
+const execCommand = __webpack_require__(5505);
+
+var fnInstallSFDX = function () {
+  const installed = execCommand.run('sfdx', ['version'], null, 'sfdxIsInstalled');
+  if (!installed) {
+    core.info('=== Downloading and installing SFDX cli ===');
+    execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
+    core.info('=== SFDX cli installed ===');
+  }
+};
+
+module.exports.install = function (command, args) {
+  //Installs Salesforce DX CLI
+  fnInstallSFDX();
+};
+
+
+/***/ }),
+
+/***/ 2440:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+const core = __webpack_require__(2186);
+const path = __webpack_require__(5622);
+const execCommand = __webpack_require__(5505);
+const fs = __webpack_require__(5747);
+const xml2js = __webpack_require__(6189);
+
+const SFDX = 'sfdx';
+
+const getWorkerTestClasses = function (mappingPath, workerIndex) {
+  const mapping = JSON.parse(fs.readFileSync(mappingPath, 'utf-8'));
+  return mapping[workerIndex].join(',');
+};
+
+const getApexTestClasses = function (manifestpath, classesPath, defaultTestClass) {
+  core.info('=== getApexTestClass ===');
+  var parser = new xml2js.Parser();
+  var typeTmp = null;
+  var classes = null;
+  var classNameTmp = null;
+  var testClasses = [];
+  var xml = fs.readFileSync(manifestpath, 'utf8');
+  var fileContentTmp = null;
+
+  parser.parseString(xml, function (err, result) {
+    for (var i in result.Package.types) {
+      typeTmp = result.Package.types[i];
+      if ('ApexClass' === typeTmp.name[0]) {
+        classes = typeTmp.members;
+      }
+    }
+  });
+
+  if (classes) {
+    for (var i = 0; i < classes.length; i++) {
+      classNameTmp = classes[i];
+      fileContentTmp = fs.readFileSync(classesPath + '/' + classNameTmp + '.cls', 'utf8');
+      if (fileContentTmp.toLowerCase().includes('@istest')) {
+        testClasses.push(classNameTmp);
+      }
+    }
+  } else {
+    if (defaultTestClass) {
+      testClasses.push(defaultTestClass);
+    }
+  }
+
+  return testClasses.join(',');
+};
+
+const getMetadataTypes = function (manifestsFiles, sfdxRootFolder) {
+  core.info('=== getManifestTypes ===');
+  var parser = new xml2js.Parser();
+  var type = null;
+  var metadataTypes = [];
+
+  for (var f = 0; f < manifestsFiles.length; f++) {
+    var manifestFile = sfdxRootFolder ? path.join(sfdxRootFolder, manifestsFiles[f]) : manifestsFiles[f];
+
+    var xml = fs.readFileSync(manifestFile, 'utf8');
+
+    parser.parseString(xml, function (err, result) {
+      for (var i in result.Package.types) {
+        type = result.Package.types[i];
+        for (var j = 0; j < type.members.length; j++) {
+          let member = type.members[j];
+          if (member == '*') {
+            metadataTypes.push(type.name[0]);
+          } else {
+            metadataTypes.push(type.name[0] + ':' + member);
+          }
+        }
+      }
+    });
+  }
+
+  return metadataTypes.join(',');
+};
+
+const setTestArgs = function (deploy, argsDeploy, manifestFile) {
+  if (deploy.testlevel == 'RunSpecifiedTests') {
+    const sfdxRootFolder = deploy.sfdxRootFolder;
+    let testClassesTmp;
+    const workerIndex = parseInt(deploy.workerIndex);
+    if (workerIndex !== NaN) {
+      // tests are specified with worker mapping
+      core.info('worker Id : ' + workerIndex);
+      testClassesTmp = getWorkerTestClasses(path.join(sfdxRootFolder, 'mapped-tests.json'), workerIndex);
+    } else {
+      testClassesTmp = getApexTestClasses(
+        sfdxRootFolder ? path.join(sfdxRootFolder, manifestFile) : manifestFile,
+        sfdxRootFolder
+          ? path.join(sfdxRootFolder, deploy.defaultSourcePath, 'classes')
+          : path.join(deploy.defaultSourcePath, 'classes'),
+        deploy.defaultTestClass
+      );
+    }
+
+    core.info('classes are : ' + testClassesTmp);
+
+    if (testClassesTmp) {
+      argsDeploy.push('--testlevel');
+      argsDeploy.push(deploy.testlevel);
+
+      argsDeploy.push('--runtests');
+      argsDeploy.push(testClassesTmp);
+    } else {
+      argsDeploy.push('--testlevel');
+      argsDeploy.push('RunLocalTests');
+    }
+  } else {
+    argsDeploy.push('--testlevel');
+    argsDeploy.push(deploy.testlevel);
+  }
+};
+
+const convertPackage = function (packageFolder, manifestFile, sfdxRootFolder) {
+  core.info('=== convert ===');
+
+  const parser = new xml2js.Parser({ attrkey: 'attr' });
+
+  // you can read it asynchronously also
+  let xml_string = fs.readFileSync(sfdxRootFolder + '/' + manifestFile, 'utf8');
+  let ret;
+  parser.parseString(xml_string, function (error, result) {
+    if (error !== null) {
+      ret = 1;
+      core.error('Error parsing xml package');
+      core.error(error);
+    } else if (result.Package.types == undefined) {
+      ret = 2;
+    } else {
+      ret = 3;
+      var argsDeploy = [
+        'force:source:convert',
+        '--rootdir',
+        './',
+        '--outputdir',
+        packageFolder,
+        '-x',
+        manifestFile,
+        '--json',
+      ];
+      execCommand.run(SFDX, argsDeploy, sfdxRootFolder);
+    }
+  });
+  return ret;
+};
+
+let login = function (cert, login) {
+  core.info('=== login ===');
+  core.debug('=== Decrypting certificate');
+  execCommand.run('openssl', [
+    'enc',
+    '-nosalt',
+    '-aes-256-cbc',
+    '-d',
+    '-in',
+    cert.certificatePath,
+    '-out',
+    'server.key',
+    '-base64',
+    '-K',
+    cert.decryptionKey,
+    '-iv',
+    cert.decryptionIV,
+  ]);
+
+  core.info('==== Authenticating in the target org');
+  const instanceurl = login.orgType === 'sandbox' ? 'https://test.salesforce.com' : 'https://login.salesforce.com';
+  core.info('Instance URL: ' + instanceurl);
+  execCommand.run(SFDX, [
+    'force:auth:jwt:grant',
+    '--instanceurl',
+    instanceurl,
+    '--clientid',
+    login.clientId,
+    '--jwtkeyfile',
+    'server.key',
+    '--username',
+    login.username,
+    '--setalias',
+    'sfdc',
+  ]);
+};
+
+let deploy = function (deploy) {
+  core.info('=== deploy ===');
+  let manifestFile = deploy.packageFolder + 'package.xml';
+  //if package is empty, deploy anyway as can have destructive changes
+  if (convertPackage(deploy.packageFolder, manifestFile, deploy.sfdxRootFolder) != 1) {
+    var argsDeploy = [
+      'force:mdapi:deploy',
+      '--wait',
+      deploy.deployWaitTime,
+      '-d',
+      deploy.packageFolder,
+      '--targetusername',
+      deploy.username,
+      '--json',
+    ];
+    if (deploy.checkonly) {
+      core.info('===== CHECK ONLY ====');
+      argsDeploy.push('--checkonly');
+    }
+    if (deploy.ignoreWarnings) {
+      argsDeploy.push('--ignorewarnings');
+    }
+    setTestArgs(deploy, argsDeploy, manifestFile);
+    execCommand.run(SFDX, argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout);
+  }
+};
+
+let retrieve = function (retrieveArgs) {
+  core.info('=== retrieve ===');
+
+  var manifestsFiles = retrieveArgs.manifestToRetrieve.split(',');
+  var sfdxRootFolder = retrieveArgs.sfdxRootFolder;
+
+  var metadataTypes = getMetadataTypes(manifestsFiles, sfdxRootFolder);
+  core.info(`metadata: ${metadataTypes}`);
+
+  var commandArgs = [
+    'force:source:retrieve',
+    '--wait',
+    retrieveArgs.deployWaitTime,
+    '--metadata',
+    metadataTypes,
+    '--targetusername',
+    'sfdc',
+    '--json',
+    '--loglevel',
+    'INFO',
+  ];
+  execCommand.run(SFDX, commandArgs, sfdxRootFolder);
+};
+
+let dumpChanges = function (dumpChangesArgs) {
+  console.info('===dump changes===');
+  var sfdxRootFolder = dumpChangesArgs.sfdxRootFolder;
+  const oneDayOffset = 24 * 60 * 60 * 1000 * 1;
+  let dt = new Date() - oneDayOffset; //24 hour before
+  const dtString = new Date(dt).toISOString();
+  let query =
+    "SELECT CreatedDate, CreatedBy.Name, ResponsibleNamespacePrefix, Action,CreatedById,DelegateUser,Display,Id,Section FROM SetupAuditTrail WHERE action not in ('suOrgAdminLogout' , 'suOrgAdminLogin') and createdDate > " +
+    dtString;
+  core.info(query);
+  var commandArgs = ['force:data:soql:query', '-q', query, '--resultformat', 'csv', '--targetusername', 'sfdc'];
+  execCommand.run(SFDX, commandArgs, sfdxRootFolder, null, true);
+};
+
+let dataFactory = function (deploy) {
+  core.info('=== dataFactory ===');
+  if (deploy.dataFactory && !deploy.checkonly) {
+    core.info('Executing data factory');
+    execCommand.run(SFDX, ['force:apex:execute', '-f', deploy.dataFactory, '-u', deploy.username]);
+  }
+};
+
+const deployer = function (args) {
+  if (args.sandbox) {
+    args.checkonly = false;
+    args.testlevel = 'NoTestRun';
+  }
+
+  //Deploy/Checkonly to Org
+  deploy(args);
+  dataFactory(args);
+
+  if (!args.sandbox && !args.checkonly) {
+    core.setOutput('deployInProd', '1');
+  }
+};
+
+const authInSandbox = function (args) {
+  core.info('=== authInSandbox ===');
+  const alias = 'sfdc.' + args.sandboxName.toLowerCase();
+  const commandArgs = [
+    'force:org:status',
+    '-n',
+    args.sandboxName,
+    '-u',
+    'sfdc',
+    '--json',
+    '-w',
+    '2',
+    '--setalias',
+    alias,
+  ];
+  const execReturn = execCommand.run(SFDX, commandArgs, null, 'authInSandbox');
+
+  if (args.deployInProd && execReturn != execCommand.returnTypes.LOGGED) {
+    return undefined;
+  }
+
+  switch (execReturn) {
+    case execCommand.returnTypes.LOGGED:
+      return alias;
+    case execCommand.returnTypes.NOTFOUND:
+      if (args.sandboxCreationType == 'new') {
+        createSandbox(args, alias);
+      } else {
+        cloneSandbox(args, alias);
+      }
+      core.setOutput('sandboxCreated', '1');
+      return alias;
+    case execCommand.returnTypes.PROCESSING:
+      const errorMessage = "Sandbox is processing, can't deploy now into sandbox.";
+      core.error(errorMessage);
+      throw Error(errorMessage);
+    default:
+      throw Error(execReturn);
+  }
+};
+
+const createSandbox = function (args, alias = null) {
+  core.info('=== createSandbox ===');
+  const commandArgs = [
+    'force:org:create',
+    '-t',
+    'sandbox',
+    'sandboxName=' + args.sandboxName,
+    'licenseType=Developer',
+    '-u',
+    'sfdc',
+    '--json',
+    '-w',
+    '60',
+  ];
+  if (alias != null) {
+    commandArgs.push('--setalias', alias);
+  }
+  execCommand.run(SFDX, commandArgs);
+};
+
+const cloneSandbox = function (args, alias = null) {
+  core.info('=== cloneSandbox ===');
+  const commandArgs = [
+    'force:org:clone',
+    '-t',
+    'sandbox',
+    'sandboxName=' + args.sandboxName,
+    'SourceSandboxName=' + args.sourceSandboxName,
+    '-u',
+    'sfdc',
+    '--json',
+    '-w',
+    '60',
+  ];
+  if (alias != null) {
+    commandArgs.push('--setalias', alias);
+  }
+  execCommand.run(SFDX, commandArgs);
+};
+
+const deleteSandbox = function (username) {
+  core.info('=== deleteSandbox ===');
+  const commandArgs = ['force:org:delete', '-u', username, '--json', '-p'];
+  const execReturn = execCommand.run(SFDX, commandArgs, null, 'deleteSandbox');
+  core.setOutput('errorDeletingSandbox', execReturn);
+};
+
+const runTests = function (args) {
+  core.info('=== runTests ===');
+  const commandArgs = [
+    'force:apex:test:run',
+    '-u',
+    args.username,
+    '-w',
+    args.deployWaitTime,
+    '-r',
+    'json',
+    '--verbose',
+  ];
+  if (args.testsToRun) {
+    commandArgs.push('-n');
+    commandArgs.push(args.testsToRun);
+  }
+  const execReturn = execCommand.run(SFDX, commandArgs, null, 'runTests', args.outputStdout);
+  core.setOutput('status', execReturn);
+};
+
+module.exports.login = login;
+module.exports.deployer = deployer;
+module.exports.retrieve = retrieve;
+module.exports.dumpChanges = dumpChanges;
+module.exports.authInSandbox = authInSandbox;
+module.exports.createSandbox = createSandbox;
+module.exports.deleteSandbox = deleteSandbox;
+module.exports.runTests = runTests;
+
+
+/***/ }),
+
+/***/ 2877:
+/***/ ((module) => {
+
+module.exports = eval("require")("encoding");
+
+
+/***/ }),
+
+/***/ 2357:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("assert");
+
+/***/ }),
+
+/***/ 3129:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("child_process");
+
+/***/ }),
+
+/***/ 8614:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("events");
+
+/***/ }),
+
+/***/ 5747:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("fs");
+
+/***/ }),
+
+/***/ 8605:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("http");
+
+/***/ }),
+
+/***/ 7211:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("https");
+
+/***/ }),
+
+/***/ 1631:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("net");
+
+/***/ }),
+
+/***/ 2087:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("os");
+
+/***/ }),
+
+/***/ 5622:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("path");
+
+/***/ }),
+
+/***/ 2413:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("stream");
+
+/***/ }),
+
+/***/ 4304:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("string_decoder");
+
+/***/ }),
+
+/***/ 8213:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("timers");
+
+/***/ }),
+
+/***/ 4016:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("tls");
+
+/***/ }),
+
+/***/ 8835:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("url");
+
+/***/ }),
+
+/***/ 1669:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("util");
+
+/***/ }),
+
+/***/ 8761:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("zlib");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		if(__webpack_module_cache__[moduleId]) {
+/******/ 			return __webpack_module_cache__[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
+/******/ 		}
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat */
+/******/ 	
+/******/ 	__webpack_require__.ab = __dirname + "/";/************************************************************************/
+/******/ 	// module exports must be returned from runtime so entry inlining is disabled
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(4351);
 /******/ })()
 ;

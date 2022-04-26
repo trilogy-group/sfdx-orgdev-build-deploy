@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint src/index.js",
     "package": "ncc build src/index.js -o dist",
-    "test": "eslint src/index.js && jest"
+    "test": "eslint src/index.js && jest",
+    "format": "prettier -w ./src"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@vercel/ncc": "^0.24.1",
     "eslint": "^6.3.0",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "prettier": "^2.6.2"
   }
 }
