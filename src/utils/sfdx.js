@@ -81,7 +81,7 @@ const setTestArgs = function (deploy, argsDeploy, manifestFile) {
     const sfdxRootFolder = deploy.sfdxRootFolder;
     let testClassesTmp;
     const workerIndex = parseInt(deploy.workerIndex);
-    if (workerIndex !== NaN) {
+    if (!isNaN(workerIndex)) {
       // tests are specified with worker mapping
       core.info('worker Id : ' + workerIndex);
       testClassesTmp = getWorkerTestClasses(path.join(sfdxRootFolder, 'mapped-tests.json'), workerIndex);
