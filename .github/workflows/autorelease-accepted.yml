@@ -1,0 +1,38 @@
+name: Auto-release for accepted tickets
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  enable-automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install npm packages
+        run: |
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GH_PACKAGES_TOKEN }}
+          npm config set @trilogy-group:registry https://npm.pkg.github.com
+
+          rm -f ./package.json ./package-lock.json
+          npm i @trilogy-group/lambda-process@latest
+      - name: auto release
+        uses: actions/github-script@v4
+        env:
+          LAMBDA_TOKEN: ${{secrets.LAMBDA_TOKEN}}
+        with:
+          github-token: ${{secrets.LAMBDA_TOKEN}}
+          script: |
+            const autoreleaseAccepted = require("@trilogy-group/lambda-process/autoreleaseAccepted");
+            const { owner, repo } = context.repo;
+            const jiraToken = Buffer.from("${{secrets.JIRA_MILOS_AUTH}}").toString('base64');
+            const mailConfig = {
+              smtpHost: "${{secrets.SMTP_HOST}}",
+              smtpPort: ${{secrets.SMTP_PORT}},
+              smtpUser: "${{secrets.SMTP_USERNAME}}",
+              smtpPass: "${{secrets.SMTP_PASSWORD}}",
+              mailNotificationFrom: "Service User <${{secrets.MAIL_NOTIFICATION_FROM}}>",
+              mailNotificationTo: "${{secrets.MAIL_NOTIFICATION_TO}}"
+            };
+            const autoreleaseAcceptedResult = await autoreleaseAccepted.check(process.env.LAMBDA_TOKEN, jiraToken, owner, repo, 'master', mailConfig, false);
+            console.info(autoreleaseAcceptedResult.info);
