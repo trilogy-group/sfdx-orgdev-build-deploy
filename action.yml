@@ -101,6 +101,10 @@ inputs:
     description: 'Turns on partial test execution, based on tests mapping. deploy_testlevel should be RunSpecifiedTests.'
     required: false
 
+  sfdx_cli_version:
+    description: 'Let you override the version of the sfdx-cli tool, which will be used.'
+    required: false
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
