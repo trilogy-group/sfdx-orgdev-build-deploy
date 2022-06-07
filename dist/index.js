@@ -13190,7 +13190,7 @@ try {
   var login = {};
 
   //Install dependecies
-  dependencies.install();
+  dependencies.install(core.getInput('sfdx_cli_version'));
 
   //Load cert params
   cert.certificatePath = core.getInput('certificate_path');
@@ -13391,18 +13391,18 @@ module.exports.run = function (command, args, workingFolder = null, process = nu
 const core = __webpack_require__(2186);
 const execCommand = __webpack_require__(5505);
 
-var fnInstallSFDX = function () {
+var fnInstallSFDX = function (versionOverride) {
   const installed = execCommand.run('sfdx', ['version'], null, 'sfdxIsInstalled');
   if (!installed) {
     core.info('=== Downloading and installing SFDX cli ===');
-    execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
+    execCommand.run('npm', ['install', 'sfdx-cli' + versionOverride ? '@' + versionOverride : 0, '--global']);
     core.info('=== SFDX cli installed ===');
   }
 };
 
-module.exports.install = function (command, args) {
+module.exports.install = function (versionOverride) {
   //Installs Salesforce DX CLI
-  fnInstallSFDX();
+  fnInstallSFDX(versionOverride);
 };
 
 
