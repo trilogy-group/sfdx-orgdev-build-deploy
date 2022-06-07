@@ -5,7 +5,7 @@ var fnInstallSFDX = function (versionOverride) {
   const installed = execCommand.run('sfdx', ['version'], null, 'sfdxIsInstalled');
   if (!installed) {
     core.info('=== Downloading and installing SFDX cli ===');
-    execCommand.run('npm', ['install', 'sfdx-cli' + versionOverride ? '@' + versionOverride : '', '--global']);
+    execCommand.run('npm', ['install', 'sfdx-cli' + (versionOverride ? '@' + versionOverride : ''), '--global']);
     core.info('=== SFDX cli installed ===');
   }
 };
