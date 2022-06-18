@@ -37,7 +37,14 @@ const outputMessage = function (message, type, outputStdout) {
 };
 
 module.exports.returnTypes = returnTypes;
-module.exports.run = function (command, args, workingFolder = null, process = null, outputStdout = true) {
+module.exports.run = function (
+  command,
+  args,
+  workingFolder = null,
+  process = null,
+  outputStdout = true,
+  ignoreError = false
+) {
   var extraParams = {};
 
   //extraParams.shell = true;
@@ -89,7 +96,7 @@ module.exports.run = function (command, args, workingFolder = null, process = nu
     }
   }
 
-  if (spawn.error !== undefined || spawn.status !== 0) {
+  if (!ignoreError && (spawn.error !== undefined || spawn.status !== 0)) {
     const errorMessage = getErrorMessage(spawn);
     outputMessage(errorMessage, 'error', outputStdout);
     throw Error(errorMessage);
