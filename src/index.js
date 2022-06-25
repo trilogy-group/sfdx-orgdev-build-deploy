@@ -14,7 +14,7 @@ try {
   var login = {};
 
   //Install dependecies
-  dependencies.install();
+  dependencies.install(core.getInput('sfdx_cli_version'));
 
   //Load cert params
   cert.certificatePath = core.getInput('certificate_path');
