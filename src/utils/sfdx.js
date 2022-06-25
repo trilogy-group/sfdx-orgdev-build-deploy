@@ -76,12 +76,20 @@ const getMetadataTypes = function (manifestsFiles, sfdxRootFolder) {
   return metadataTypes.join(',');
 };
 
+const isWorkerDeploy = function (deploy) {
+  const workerIndex = parseInt(deploy.workerIndex);
+  if (isNaN(workerIndex)) {
+    return -1;
+  }
+  return workerIndex;
+};
+
 const setTestArgs = function (deploy, argsDeploy, manifestFile) {
   if (deploy.testlevel == 'RunSpecifiedTests') {
     const sfdxRootFolder = deploy.sfdxRootFolder;
     let testClassesTmp;
-    const workerIndex = parseInt(deploy.workerIndex);
-    if (!isNaN(workerIndex)) {
+    const workerIndex = isWorkerDeploy(deploy);
+    if (workerIndex >= 0) {
       // tests are specified with worker mapping
       core.info('worker Id : ' + workerIndex);
       testClassesTmp = getWorkerTestClasses(path.join(sfdxRootFolder, 'mapped-tests.json'), workerIndex);
@@ -206,7 +214,7 @@ let deploy = function (deploy) {
       argsDeploy.push('--ignorewarnings');
     }
     setTestArgs(deploy, argsDeploy, manifestFile);
-    execCommand.run(SFDX, argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout);
+    execCommand.run(SFDX, argsDeploy, deploy.sfdxRootFolder, null, deploy.outputStdout, isWorkerDeploy(deploy) >= 0);
   }
 };
 
