@@ -6,7 +6,7 @@
 name: Check Jira ticket
 on:
   pull_request:
-    types: [ opened, edited, reopened, synchronize ]
+    types: [opened, edited, reopened, synchronize]
   workflow_dispatch:
 
 jobs:
