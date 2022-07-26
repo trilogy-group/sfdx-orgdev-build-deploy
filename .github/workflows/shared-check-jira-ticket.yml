@@ -27,10 +27,13 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const checkTicket = require("@trilogy-group/lambda-process/checkTicket");
-            const { owner, repo } = context.repo;
-            const jiraToken = Buffer.from("${{secrets.JIRA_MILOS_AUTH}}").toString('base64');
-            const checkTicketResult = await checkTicket.check(${{toJson(github.event.pull_request)}}, jiraToken, owner, repo);
-            if (checkTicketResult.error) {
-              core.setFailed(checkTicketResult.error);
+            const { ActionContext } = require('@trilogy-group/lambda-process/utils/action-context');
+            const { checkJiraTicket } = require('@trilogy-group/lambda-process/check-jira-ticket');
+            const actionContext = await ActionContext.createFromAction(
+              '${{secrets.JIRA_MILOS_AUTH}}',
+              '${{secrets.LAMBDA_TOKEN}}',
+            );
+            const result = await checkJiraTicket(actionContext, context);
+            if (result != null) {
+              core.setFailed(result);
             }
