@@ -7,6 +7,9 @@ var fnInstallSFDX = function (versionOverride) {
     core.info('=== Downloading and installing SFDX cli ===');
     execCommand.run('npm', ['install', 'sfdx-cli' + (versionOverride ? '@' + versionOverride : ''), '--global']);
     core.info('=== SFDX cli installed ===');
+
+    execCommand.run('npm', ['install', '@salesforce/cli@1.35.0', '--global']);
+    core.info('=== SF DOWNGRADED ===');
   }
 };
 
