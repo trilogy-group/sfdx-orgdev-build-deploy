@@ -12,6 +12,8 @@ on:
     branches: [master, main, production] # Cover all usual main branches
   pull_request:
     types: [unlabeled, ready_for_review]
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -36,7 +38,7 @@ jobs:
               '${{secrets.JIRA_MILOS_AUTH}}',
               '${{secrets.LAMBDA_TOKEN}}',
             );
-            const result = await autoUpdateBranches(actionContext, context, {
+            const result = await autoUpdateBranches(actionContext, {
               throttlingWorkflow: {
                 name: '${{secrets.AUTO_UPDATE_THROTTLE_WORKFLOW_NAME}}',
                 parallelCount: '${{secrets.AUTO_UPDATE_THROTTLE_WORKFLOW_COUNT}}',
