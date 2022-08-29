@@ -30,7 +30,16 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const autoupdateBranches = require("@trilogy-group/lambda-process/autoupdateBranches");
-            const { owner, repo } = context.repo;
-            const autoupdateBranchesResult = await autoupdateBranches.check('${{secrets.LAMBDA_TOKEN}}', owner, repo, 'master');
-            console.info(autoupdateBranchesResult.info);
+            const { ActionContext } = require('@trilogy-group/lambda-process/utils/action-context');
+            const { autoUpdateBranches } = require('@trilogy-group/lambda-process/auto-update-branches');
+            const actionContext = await ActionContext.createFromAction(
+              '${{secrets.JIRA_MILOS_AUTH}}',
+              '${{secrets.LAMBDA_TOKEN}}',
+            );
+            const result = await autoUpdateBranches(actionContext, context, {
+              throttlingWorkflow: {
+                name: '${{secrets.AUTO_UPDATE_THROTTLE_WORKFLOW_NAME}}',
+                parallelCount: '${{secrets.AUTO_UPDATE_THROTTLE_WORKFLOW_COUNT}}',
+              },
+            });
+            console.info(result.info);
