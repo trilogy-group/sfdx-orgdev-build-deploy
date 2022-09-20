@@ -9,6 +9,7 @@ jobs:
   verify-changeset-code-type:
     name: Check there are no Javascript files in the change set
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v3
         with:
@@ -29,6 +30,7 @@ jobs:
   typescript-renaming-is-correct:
     name: Javascript files renamed to Typescript
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - id: files
         uses: jitterbit/get-changed-files@v1

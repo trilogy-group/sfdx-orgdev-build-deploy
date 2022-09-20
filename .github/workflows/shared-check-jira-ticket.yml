@@ -12,6 +12,7 @@ on:
 jobs:
   check-jira-ticket:
     name: Check Jira ticket
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     if: ${{github.event.pull_request.user.type != 'Bot'}}
     steps:
