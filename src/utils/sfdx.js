@@ -260,7 +260,7 @@ let dataFactory = function (deploy) {
   core.info('=== dataFactory ===');
   if (deploy.dataFactory && !deploy.checkonly) {
     core.info('Executing data factory');
-    execCommand.run(SFDX, ['force:apex:execute', '-f', deploy.dataFactory, '-u', deploy.username]);
+    execCommand.run(SFDX, ['apex', 'run', '-f', deploy.dataFactory, '-o', deploy.username]);
   }
 };
 
