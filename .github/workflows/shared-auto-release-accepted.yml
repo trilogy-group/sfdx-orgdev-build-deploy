@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       - name: configure-npm
         run: |
           npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GH_PACKAGES_TOKEN }}
